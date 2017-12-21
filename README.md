@@ -1,6 +1,8 @@
 # FortunaSDK
 SDK for Interacting with the Fortuna LMS API
 
+[![Build Status](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK.svg?branch=master)](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK)
+
 ## Contributing
 
 - Clone repo onto your machine
