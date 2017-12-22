@@ -10,10 +10,8 @@ let env = process.env;
 
 const Environment = require('../lib/environment.module');
 const Auth = require('../lib/auth.module');
-const Fortuna = require('../index.js');
-
-console.log(Fortuna);
-
+const Fortuna = require('../lib/fortuna-api.class');
+const Ping = require('../lib/ping.module');
 
 describe('env vars', () => {
     it(' should be defined and strings', () => {
@@ -33,15 +31,15 @@ describe('Environment', () => {
 
     describe('Fortuna', () => {
         it('should return service running', () => {
-            Fortuna._.get('ping')
+            Fortuna.get('ping')
                 .then((res) => {
                     res.should.equal('Service Running');
                 });
 
         });
-        describe('Fortuna.Ping.checkHealth()', () => {
+        describe('fortuna.ping.checkHealth()', () => {
             it('should return a cooky message', () => {
-                Fortuna.ping.checkHealth()
+                Ping.checkHealth()
                     .then((res) => {
                         res.should.equal(' Hello Megan || Aaron || Beth.   ¯\\_(ツ)_/¯.  #MeganThingsHappen');
                     });
