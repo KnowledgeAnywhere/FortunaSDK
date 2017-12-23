@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha spec/fortuna-api.spec.js",
     "manual": "node spec/manual-test.js",
-    "docs": "jsdoc -c conf.json"
+    "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "repository": {
     "type": "git",
