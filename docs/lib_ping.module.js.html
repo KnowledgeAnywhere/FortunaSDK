@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: lib/ping.module.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,50 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: lib/ping.module.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 
+const FortunaAPI = require('./fortuna-api.module');
 
-    <h3> </h3>
+/** Ping Module.
+ * @module ping
+ * @extends FortunaAPI
+ * @namespace fortuna.ping
+ */
 
+module.exports = class Ping extends FortunaAPI {
 
+    /**
+     * Checks service health.
+     * @function checkHealth
+     * @example &lt;caption>Example usage &lt;/caption>
+     * fortuna.ping.checkHealth()
+     * @returns {promise} - Promise resolves to a string containing a success message
+     * @throws Error message indicating service may be experiencing an interruption
+     */
 
+    static checkHealth() {
+        return new Promise((resolve, reject) => {
+            let endpoint = "ping/authorized";
+            super.get(endpoint)
+                .then((res) => {
+                    resolve(res);
+                })
+                .catch((ex) => reject(ex));
+        });
 
-
-
-
-
-
-
-    
-
-
-
-
-
+    }
+};</code></pre>
+        </article>
+    </section>
 
 
 

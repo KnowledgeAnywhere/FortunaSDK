@@ -1,8 +1,8 @@
 "use strict";
 
-const Environment = require('../lib/environment.module');
+const Environment = require('../lib/environment.helper');
 const Auth = require('../lib/auth.module');
-const Fortuna = require('../lib/fortuna-api.class');
+const Fortuna = require('../lib/fortuna-api.module');
 const Ping = require('../lib/ping.module');
 
 Fortuna.get("ping")

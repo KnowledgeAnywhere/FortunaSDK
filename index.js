@@ -1,5 +1,6 @@
-const FortunaAPI = require('./lib/fortuna-api.class.js');
-const Ping = require('./lib/ping.class');
+const FortunaAPI = require('./lib/fortuna-api.module.js');
+const Ping = require('./lib/ping.module');
+const Auth = require('./lib/auth.module');
 
 /** Fortuna API SDK by Knowledge Anywhere
  *
@@ -8,5 +9,6 @@ const Ping = require('./lib/ping.class');
 
 module.exports = {
     _: FortunaAPI,
-    ping: Ping
+    ping: Ping,
+    auth: Auth
 };
