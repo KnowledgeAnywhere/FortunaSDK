@@ -2,13 +2,15 @@ const FortunaAPI = require('./lib/fortuna-api.module.js');
 const Ping = require('./lib/ping.module');
 const Auth = require('./lib/auth.module');
 
-/** Fortuna API SDK by Knowledge Anywhere
- *
+/** @namespace fortuna */
+
+/**
+ * @description Top-Level namespace for the Fortuna SDK.
  */
 
 
 module.exports = {
-    _: FortunaAPI,
+    $: FortunaAPI,
     ping: Ping,
     auth: Auth
 };

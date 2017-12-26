@@ -1,9 +1,6 @@
 "use strict";
 
-const Environment = require('../lib/environment.helper');
-const Auth = require('../lib/auth.module');
-const Fortuna = require('../lib/fortuna-api.module');
-const Ping = require('../lib/ping.module');
+const fortuna = require('../index');
 
 Fortuna.get("ping")
     .then((res) => {
