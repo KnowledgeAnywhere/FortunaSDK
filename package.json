@@ -4,7 +4,7 @@
   "description": "SDK for interacting with the Fortuna API",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec/fortuna-api.spec.js",
+    "test": "mocha spec/fortuna-api.spec.js --timeout 5000",
     "manual": "node spec/manual-tests.js",
     "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha spec/fortuna-api.spec.js",

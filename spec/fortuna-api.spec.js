@@ -11,10 +11,9 @@ const env = process.env;
 const LocalStorage = require('node-localstorage').LocalStorage;
 const ls = new LocalStorage('./.data');
 
-const Environment = require('../lib/environment.helper');
-const Auth = require('../lib/auth.module');
+const Environment = require('../lib/helpers/environment.helper');
+const Auth = require('../lib/modules/auth.module');
 const fortuna = require('../index.js');
-
 
 describe('env vars', () => {
     it(' should be defined and strings', () => {
@@ -54,21 +53,23 @@ describe('fortuna', () => {
 
         ls.clear(); //Remove any tokens in storage;
         describe('fortuna.auth.token()', () => {
-
             var token;
             it('should return a token object', (done) => {
+
                 fortuna.auth.token()
                     .then((res) => {
                         token = res;
-                        console.log(res);
-                        token.should.have.all.keys('audience', 'accessToken', 'issued', 'expires', 'isValid', 'authorization', 'expiresIn');
-                        fortuna.auth.token()
-                            .then((_res) => {
-                                _res.should.equal(token);
+                        res.should.have.property('authorization');
+                    }).finally(done);
 
-                            }).finally(done);
-                    });
+            });
 
+            it('should return the token from LS instead of creating a new one', (done) => {
+                fortuna.auth.token()
+                    .then((res) => {
+                        res.accessToken.should.equal(token.accessToken);
+
+                    }).finally(done);
             });
         });
 
@@ -85,15 +86,15 @@ describe('fortuna', () => {
 
     describe('fortuna.ping', () => {
         it('should be defined and an object', () => {
-            expect(fortuna.ping).to.be.an('function')
+            expect(fortuna.ping).to.be.an('function');
         })
 
         describe('fortuna.ping.checkHealth()', () => {
-            it('should return a message', () => {
+            it('should return a message', (done) => {
                 fortuna.ping.checkHealth()
                     .then((res) => {
                         res.should.equal(' Hello Megan || Aaron || Beth.   ¯\\_(ツ)_/¯.  #MeganThingsHappen');
-                    });
+                    }).finally(done());
 
             });
         });

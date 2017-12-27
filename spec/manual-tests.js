@@ -1,7 +1,6 @@
 "use strict";
 
 const fortuna = require('../index');
+const Environment = require('../lib/helpers/environment.helper');
 
-fortuna.auth.token()
-    .then((token) => console.log(token))
-    .catch((ex) => console.log(ex));
+var token = fortuna.auth.token().then((res) => console.log(res));

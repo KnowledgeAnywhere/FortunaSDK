@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      #Auth - Documentation
+      #Ping - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -76,7 +76,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        #Auth
+        #Ping
       </h1>
     
 
@@ -92,7 +92,7 @@
       
         
             <div class="description">
-              Methods for handling authentication.  Usage of this module may not be needed.   When making calls to the API using other modules in this sdk, authorization is handeled for you.This module is available if you would like to use it to make standard restful calls to the API outside of the SDK.
+              - The ping module is a utility class used to determine service availability.   WARNING:  This module may be deprecated or subject to change.It's primary usage at this stage is for testing.   Documentation will most certainly be dropped beyond the initial full release.
             </div>
         
 
@@ -129,7 +129,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="lib_modules_auth.module.js.html">lib/modules/auth.module.js</a>, <a href="lib_modules_auth.module.js.html#line15">line 15</a>
+          <a href="lib_modules_ping.module.js.html">lib/modules/ping.module.js</a>, <a href="lib_modules_ping.module.js.html#line5">line 5</a>
         </li>
       </ul>
     </dd>
@@ -169,13 +169,13 @@
   
 
   <span class='name-container'>
-    <a class="link-icon" href="#.token">
+    <a class="link-icon" href="#.checkHealth">
       <svg height="20" width="20" style="fill: black;">
         <use xlink:href="#linkIcon"></use>
       </svg>
     </a>
-    <h4 class="name" id=".token">
-      <span class="type-signature">(async, static) </span>token<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Token.html">Token</a>>}</span>
+    <h4 class="name" id=".checkHealth">
+      <span class="type-signature">(async, static) </span>checkHealth<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;string>}</span>
     </h4>
   </span>
 
@@ -184,7 +184,7 @@
 
 
   <div class="description">
-    Creates a new token from the Fortuna API Authorization server and stores it on disk.Calling the method will return a promise containing the token.Subsequent calls will check the freshness of the token and create a new one if needed.
+    Checks service health.    If a exception is returned then the service may not be available.
   </div>
 
 
@@ -227,7 +227,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="lib_modules_auth.module.js.html">lib/modules/auth.module.js</a>, <a href="lib_modules_auth.module.js.html#line25">line 25</a>
+          <a href="lib_modules_ping.module.js.html">lib/modules/ping.module.js</a>, <a href="lib_modules_ping.module.js.html#line14">line 14</a>
         </li>
       </ul>
     </dd>
@@ -235,17 +235,6 @@
 
   
 
-  
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-      <ul>
-        
-          <li>
-            <a href="Token.html">Token</a>
-          </li>
-        
-      </ul>
-    </dd>
   
 
   
@@ -264,15 +253,15 @@
 
 
   <div class="example-container">
-    <a class="link-icon" href="#token-examples">
+    <a class="link-icon" href="#checkHealth-examples">
       <svg height="20" width="20" style="fill: black;">
         <use xlink:href="#linkIcon"></use>
       </svg>
     </a>
-    <h5 id="token-examples">Example</h5>
+    <h5 id="checkHealth-examples">Example</h5>
     
 
-  <pre class="prettyprint"><code>fortuna.auth.token()             .then((token) => {                   //use token.authorization in a a Authorization header when making a restful API call.                   })              .catch((ex) => console.log(ex));</code></pre>
+  <pre class="prettyprint"><code>fortuna.ping.checkHealth()               .then((res) => console.log(res))               .catch((ex) => console.log(ex));</code></pre>
 
 
   </div>

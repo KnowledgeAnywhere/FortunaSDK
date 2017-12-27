@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      index.js - Documentation
+      Fortuna - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -78,37 +76,106 @@
   <div id="main">
     
       <h1 class="page-title">
-        index.js
+        Fortuna
       </h1>
     
 
     
-      
 
 <section>
+  <header>
+    
+      <h2>
+        
+        Fortuna
+        
+      </h2>
+
+      
+    
+  </header>
+
   <article>
-    <pre class="prettyprint source linenums"><code>const FortunaAPI = require('./lib/modules/fortuna-api.module.js');
-const Ping = require('./lib/modules/ping.module');
-const Auth = require('./lib/modules/auth.module');
+    <div class="container-overview">
+      
+        
+            <div class="description">
+              Fortuna
+            </div>
+        
 
-/** @namespace {object} Fortuna */
+        
 
-/**
- * @description Top-Level namespace for the Fortuna SDK.
- */
+<dl class="details">
 
-const Fortuna = {};
+  
 
-Fortuna.$ = FortunaAPI;
-Fortuna.ping = Ping;
-Fortuna.auth = Auth;
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="index.js.html">index.js</a>, <a href="index.js.html#line5">line 5</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
 
 
-module.exports = Fortuna;</code></pre>
+        
+      
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
   </article>
 </section>
 
-    
+
 
 
   </div>
