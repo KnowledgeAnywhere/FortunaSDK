@@ -2,7 +2,7 @@
 
 ---
 
- [![Build Status](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK.svg?branch=master)](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK)
+## [![Build Status](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK.svg?branch=master)](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK) [![Coverage Status](https://coveralls.io/repos/github/KnowledgeAnywhere/FortunaSDK/badge.svg)](https://coveralls.io/github/KnowledgeAnywhere/FortunaSDK)
 
 SDK for Interacting with the Fortuna LMS API.   *This SDK is still in development and not ready for general use.*
 
