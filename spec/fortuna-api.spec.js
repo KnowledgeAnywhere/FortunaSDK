@@ -1,12 +1,15 @@
 "use strict";
 
-let mocha = require('mocha');
-let assert = require('assert');
-let chai = require('chai'),
+const mocha = require('mocha');
+const assert = require('assert');
+const chai = require('chai'),
     expect = chai.expect,
     should = chai.should();
 
-let env = process.env;
+const env = process.env;
+
+const LocalStorage = require('node-localstorage').LocalStorage;
+const ls = new LocalStorage('./.data');
 
 const Environment = require('../lib/environment.helper');
 const Auth = require('../lib/auth.module');
@@ -22,7 +25,7 @@ describe('env vars', () => {
 
 describe('Environment', () => {
     it('should return the current environment', () => {
-        let _e = Environment.get();
+        const _e = Environment.get();
         _e.should.be.a('object');
         _e.audience.should.be.a('string');
         _e.secret.should.be.a('string');
@@ -35,27 +38,65 @@ describe('fortuna', () => {
         expect(fortuna).to.be.an('object');
     })
 
-    it('fortuna.$.get should get data', () => {
-        fortuna.$.get('ping')
-            .then((res) => {
-                res.should.equal('Service Running');
+    describe('fortuna.auth', () => {
+        it('should be defined and an object', () => {
+            expect(fortuna.auth).to.be.an('function')
+        })
+        describe('fortuna.auth.getSingleUseToken()', (done) => {
+            it('should return a string containing Bearer', () => {
+                fortuna.auth.getSingleUseToken()
+                    .then((res) => {
+                        res.should.contain('Bearer');
+                    }).finally(done);
+
             });
+        });
 
-        describe('fortuna.ping', () => {
-            it('should be defined and an object', () => {
-                expect(fortuna.ping).to.be.an('function')
-            })
+        ls.clear(); //Remove any tokens in storage;
+        describe('fortuna.auth.token()', () => {
 
-            describe('fortuna.ping.checkHealth()', () => {
-                it('should return a message', () => {
-                    fortuna.ping.checkHealth()
-                        .then((res) => {
-                            res.should.equal(' Hello Megan || Aaron || Beth.   ¯\\_(ツ)_/¯.  #MeganThingsHappen');
-                        });
+            var token;
+            it('should return a token object', (done) => {
+                fortuna.auth.token()
+                    .then((res) => {
+                        token = res;
+                        console.log(res);
+                        token.should.have.all.keys('audience', 'accessToken', 'issued', 'expires', 'isValid', 'authorization', 'expiresIn');
+                        fortuna.auth.token()
+                            .then((_res) => {
+                                _res.should.equal(token);
 
-                });
+                            }).finally(done);
+                    });
+
             });
-        }); // Fortuna.Ping
+        });
 
-    });
-}); // Fortuna
+    }); // fortuna.auth
+
+    describe('fortuna.$', () => {
+        it('fortuna.$.get should get data', (done) => {
+            fortuna.$.get('ping')
+                .then((res) => {
+                    res.should.equal('Service Running');
+                }).finally(done);
+        });
+    }); // fortuna.$
+
+    describe('fortuna.ping', () => {
+        it('should be defined and an object', () => {
+            expect(fortuna.ping).to.be.an('function')
+        })
+
+        describe('fortuna.ping.checkHealth()', () => {
+            it('should return a message', () => {
+                fortuna.ping.checkHealth()
+                    .then((res) => {
+                        res.should.equal(' Hello Megan || Aaron || Beth.   ¯\\_(ツ)_/¯.  #MeganThingsHappen');
+                    });
+
+            });
+        });
+    }); // fortuna.ping
+
+}); // fortuna

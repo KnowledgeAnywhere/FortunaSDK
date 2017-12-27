@@ -2,13 +2,6 @@
 
 const fortuna = require('../index');
 
-Fortuna.get("ping")
-    .then((res) => {
-        console.log(res);
-    }).catch((ex) => console.log(ex));
-
-Ping.checkHealth()
-    .then((res) => {
-        console.log(res);
-    })
+fortuna.auth.token()
+    .then((token) => console.log(token))
     .catch((ex) => console.log(ex));
