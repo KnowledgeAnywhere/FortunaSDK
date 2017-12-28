@@ -19,12 +19,13 @@ describe('env vars', () => {
     it(' should be defined and strings', () => {
         env.FORTUNA_SECRET.should.be.a('string');
         env.FORTUNA_AUDIENCE.should.be.a('string');
+        env.FORTUNA_API_URL.should.be.a('string');
     });
 });
 
 describe('Environment', () => {
     it('should return the current environment', () => {
-        const _e = Environment.get();
+        const _e = Environment.get;
         _e.should.be.a('object');
         _e.audience.should.be.a('string');
         _e.secret.should.be.a('string');
@@ -94,7 +95,8 @@ describe('fortuna', () => {
                 fortuna.ping.checkHealth()
                     .then((res) => {
                         res.should.equal(' Hello Megan || Aaron || Beth.   ¯\\_(ツ)_/¯.  #MeganThingsHappen');
-                    }).finally(done);
+                        done();
+                    });
 
             });
         });

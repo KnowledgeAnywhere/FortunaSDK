@@ -12,7 +12,7 @@ contact support@knowledgeanywhere.com if you would like more information.
 
 - You will need Audience and Secret keys for authorization.   These can be obtained by going to into the admin panel for your lMS and navigating to Site > External API keys.
 - run the cmd `npm i fortunasdk --save` to get the package.
-- The SDK expects the constants `FORTUNA_AUDIENCE` and `FORTUNA_SECRET` to be present as process variables.   The easiest way to accomplish this is to use an .env file that is loaded via Foreman or dotenv.
+- The SDK expects the constants `FORTUNA_AUDIENCE`, `FORTUNA_SECRET` & `FORTUNA_API_URL` to be present as process variables.   The easiest way to accomplish this is to use an .env file that is loaded via [Foreman](https://www.npmjs.com/package/foreman) or [dotenv](https://www.npmjs.com/package/dotenv).
 
 ## Usage
 
@@ -26,7 +26,7 @@ contact support@knowledgeanywhere.com if you would like more information.
 ## Contributing
 
 - Clone repo onto your machine
-- Create a .env file with `AUDIENCE`, `SECRET` & `ENVIRONMENT` keys.   Fill in `AUDIENCE` and `SECRET` from the values that are attained in the Fortuna admin.  Set environment to `stage`.
+- Create a .env file with `FORTUNA_AUDIENCE`, `FORTUNA_SECRET` keys.   Fill in `FORTUNA_AUDIENCE` and `FORTUNA_SECRET` from the values that are attained in the Fortuna admin.  Set environment to `stage`.
 - Run `npm install`
 - To run tests run `npm tests`
 

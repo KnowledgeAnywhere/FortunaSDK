@@ -14,6 +14,6 @@ config.global.userAgent = 'FortunaSDK@alpha'; // <name>@semver
 
 config.auth.endpoints.token = 'auth/token';
 
-config.ping.endpoints.checkHealth = 'ping';
+config.ping.endpoints.checkHealth = 'ping/authorized';
 
 module.exports = config;
