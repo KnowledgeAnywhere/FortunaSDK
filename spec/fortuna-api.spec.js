@@ -94,7 +94,7 @@ describe('fortuna', () => {
                 fortuna.ping.checkHealth()
                     .then((res) => {
                         res.should.equal(' Hello Megan || Aaron || Beth.   ¯\\_(ツ)_/¯.  #MeganThingsHappen');
-                    }).finally(done());
+                    }).finally(done);
 
             });
         });

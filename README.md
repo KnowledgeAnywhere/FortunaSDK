@@ -1,8 +1,6 @@
 # Fortuna LMS API SDK
 
----
-
-## [![Build Status](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK.svg?branch=master)](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK) [![Coverage Status](https://coveralls.io/repos/github/KnowledgeAnywhere/FortunaSDK/badge.svg)](https://coveralls.io/github/KnowledgeAnywhere/FortunaSDK)
+[![Build Status](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK.svg?branch=master)](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK) [![Coverage Status](https://coveralls.io/repos/github/KnowledgeAnywhere/FortunaSDK/badge.svg)](https://coveralls.io/github/KnowledgeAnywhere/FortunaSDK)
 
 SDK for Interacting with the Fortuna LMS API.   *This SDK is still in development and not ready for general use.*
 
@@ -33,6 +31,13 @@ contact support@knowledgeanywhere.com if you would like more information.
 - To run tests run `npm tests`
 
 To update documentation, run `npm run-script generate-docs`
+
+### Debugging in VS Code
+
+The recommended editor for working on the FortunaSDK is Visual Studio code, which is has a debug configuration already setup.
+In the specs folder, modify the file `manual-tests.js` to run through the code you desire to debug.  When you're ready, select the "debug" icon in the pane and click "launch program" and it will hit any breakpoints you set.
+
+See also: [Visual Studio Code - Debugger Documentation](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)
 
 ### Pull Requests will not be considered until public availability
 
