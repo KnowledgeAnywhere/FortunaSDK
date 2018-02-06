@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      lib/modules/fortuna-api.module.js - Documentation
+      lib/modules/user.module.js - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -78,7 +78,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        lib/modules/fortuna-api.module.js
+        lib/modules/user.module.js
       </h1>
     
 
@@ -88,169 +88,69 @@
 <section>
   <article>
     <pre class="prettyprint source linenums"><code>"use strict";
-const Promise = require('bluebird');
-const r = require('request-promise');
 
-const Environment = require('../helpers/environment.helper');
-const Auth = require('./auth.module');
+const Fortuna = require('./fortuna-api.module');
+const config = require('../../config.js');
 
-const env = Environment.get;
-const config = require('../../config');
-
-
-/** @module $
+/**
+ * @module User
  * @memberof Fortuna
- * @description The $ module contains methods needed by the child classes to effectivley call the API in a repeatable manner.
+ * @alias fortuna.user
+ * @extends Fortuna
+ * @description The user module is a utility class used to determine service availability.   WARNING:  This module may be deprecated or subject to change.
+ * It's primary usage at this stage is for testing.   Documentation will most certainly be dropped beyond the initial full release.
  */
 
-class FortunaAPI {
+class User extends Fortuna {
 
     /**
-     * @method get
+     * @method findById
      * @static
-     * @description Performs a GET request.
-     * @param {string} endpoint to be called.
-     * @returns {Promise&lt;object>} JSON payload returned from the API
-     */
-
-    static get(endpoint) {
-        return new Promise((resolve, reject) => {
-            Auth.token()
-                .then((token) => {
-                    let req = {
-                        uri: this._formatURI(endpoint),
-                        json: true,
-                        headers: {
-                            "Authorization": token.authorization,
-                            "User-Agent": config.global.userAgent
-                        }
-                    };
-                    console.log(req.uri);
-                    r(req)
-                        .then((res) => {
-                            resolve(res);
-                        })
-                        .catch((ex) => reject(ex));
-                })
-                .catch((ex) => this._handleEx(ex));
-        });
-    }
-
-    /**
-     * @method post
-     * @static
-     * @description Performs a POST request.
-     * @param {string} endpoint to be called.
-     * @param {object} JSON data to be sent to the server
-     * @returns {Promise&lt;object>} JSON payload returned from the API
-     */
-    static post(endpoint, data) {
-        return new Promise((resolve, reject) => {
-            Auth.token()
-                .then((token) => {
-                    let req = {
-                        method: 'POST',
-                        uri: this._formatURI(endpoint),
-                        json: true,
-                        headers: {
-                            "Authorization": token.authorization,
-                            "User-Agent": config.global.userAgent
-                        },
-                        data: data
-                    };
-                    r(req)
-                        .then((res) => {
-                            resolve(res);
-                        })
-                        .catch((ex) => reject(ex));
-                })
-                .catch((ex) => this._handleEx(ex));
-        });
-    }
-
-    /**
-     * @method put
-     * @static
-     * @description Performs a PUT request.   You can also send in a blank object and append a path param to the endpoint.
-     * @param {string} endpoint to be called.
-     * @param {object} JSON data to be sent to the server
-     * @returns {Promise&lt;object>} JSON payload returned from the API
-     */
-
-    static put(endpoint, data) {
-        return new Promise((resolve, reject) => {
-            Auth.token()
-                .then((token) => {
-                    let req = {
-                        method: 'PUT',
-                        uri: this._formatURI(endpoint),
-                        json: true,
-                        headers: {
-                            "Authorization": token.authorization,
-                            "User-Agent": config.global.userAgent
-                        },
-                        data: data
-                    };
-                    r(req)
-                        .then((res) => {
-                            resolve(res);
-                        })
-                        .catch((ex) => reject(ex));
-                })
-                .catch((ex) => this._handleEx(ex));
-        });
-    }
-
-    /**
-     * @method delete
-     * @static
-     * @description Performs a DELETE request.
-     * @param {string} endpoint to be called.   Should include the path params or a query string with the resource you intend to delete.
-     * @returns {Promise&lt;object>} JSON payload returned from the API
+     * @async
+     * @description Finds a single user by externalId.   Resolves to a promise containing the user.   If a user is not found with the specified externalId a 404 will be returned in the catch block.
+     * @param externalId - externalId of the user to be looked up.
      * @example
-     * fortuna.$.delete('api/posts/delete/123456');
+     * fortuna.user.findById()
+     *                .then((res) => console.log(user))
+     *                .catch((ex) => console.log(ex));
+     * @returns {Promise&lt;User>} - Promise resolves to a object containing the user.
      */
-    static delete(endpoint, data) {
+
+    static findById(externalId) {
         return new Promise((resolve, reject) => {
-            Auth.token()
-                .then((token) => {
-                    let req = {
-                        method: 'DELETE',
-                        uri: this._formatURI(endpoint),
-                        json: true,
-                        headers: {
-                            "Authorization": token.authorization,
-                            "User-Agent": config.global.userAgent
-                        },
-                    };
-                    r(req)
-                        .then((res) => {
-                            resolve(res);
-                        })
-                        .catch((ex) => reject(ex));
+            super.get(`${config.user.endpoints.resource}/${externalId}`)
+                .then((user) => {
+                    resolve(user);
                 })
-                .catch((ex) => this._handleEx(ex));
+                .catch((ex) => reject(ex));
         });
     }
 
-
-    static _formatURI(endpoint) {
-        return `${env.apiURL}/${endpoint}`;
-    }
-
-    /** Exception handler.
-     * @description Exceptions from the API are piped to this method.   In the future this will support a formal logger function.
-     * @param ex
-     *
+    /**
+     * @method create
+     * @static
+     * @async
+     * @description Finds a single user by externalId.   Resolves to a promise containing the user.   If a user is not found with the specified externalId a 404 will be returned in the catch block.
+     * @param user {object&lt;User>} - externalId of the user to be looked up.
+     * @example
+     * fortuna.user.findById()
+     *                .then((res) => console.log(user))
+     *                .catch((ex) => console.log(ex));
+     * @returns {Promise&lt;User>} - Promise resolves to a object containing the user.
      */
 
-    static _handleEx(ex) {
-        console.log(ex);
-        return;
+    static create(user) {
+        return new Promise((resolve, reject) => {
+            super.get(`${config.user.endpoints.resource}/${externalId}`)
+                .then((user) => {
+                    resolve(user);
+                })
+                .catch((ex) => reject(ex));
+        });
     }
 }
 
-module.exports = FortunaAPI;</code></pre>
+module.exports = User;</code></pre>
   </article>
 </section>
 

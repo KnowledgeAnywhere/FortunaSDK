@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      lib/models/token.model.js - Documentation
+      User - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -78,85 +76,342 @@
   <div id="main">
     
       <h1 class="page-title">
-        lib/models/token.model.js
+        User
       </h1>
     
 
     
-      
 
 <section>
+  <header>
+    
+      <h2>
+        
+        User
+        
+      </h2>
+
+      
+    
+  </header>
+
   <article>
-    <pre class="prettyprint source linenums"><code>"use strict";
+    <div class="container-overview">
+      
+        
 
-const moment = require('moment');
 
-class Token {
+  
 
-    /** Create a Token
-     * @class Token
-     * @type Token
-     * @param {object} token - Response from auth server.
-     * @prop accessToken {string} - Access Token, used to make requests.
-     * @prop issued {datetime} - Issue date
-     * @prop expires {datetime} - Expiry date
-     * @prop expiresIn {int} - Seconds till expiration.
-     * @prop tokenType {string} - Type of token.    (Bearer)
-     * @prop authorization {string} - Authorization header content.    Example `Bearer xxxxxxxxx`
-     * @prop isValid {bool} - Checks to see if the token is "fresh"  or expired
-     *      */
-    constructor(token) {
-        this.accessToken = token.access_token;
-        this.issued = token[".issued"];
-        this.expires = token[".expires"];
-        this.expiresIn = this._expiresIn();
-        this.tokenType = token.token_type;
-        this.authorization = this._authorization();
-        this.isValid = this._isValid();
-        this.audience = token.audience;
-    }
+  <span class='name-container'>
+    <a class="link-icon" href="#User">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="User">
+      <span class="type-signature"></span>new User<span class="signature">(user)</span><span class="type-signature"></span>
+    </h4>
+  </span>
 
-    /** Retreives the token
-     * @returns {object} token - Token object
-     */
+  
 
-    get() {
-        return this;
-    }
 
-    /** Checks to see if a token has expired.
-     * @private
-     * @returns {bool} - True if token is still valid
-     */
 
-    _isValid() {
-        return moment(this.expires).isAfter();
-    }
+  <div class="description">
+    Create a User
+  </div>
 
-    /** Computes number of seconds until token expires
-     * @private
-     * @returns {int} - Seconds until expiration
-     */
 
-    _expiresIn() {
-        return moment(this.expires).unix() - moment().unix();
-    }
 
-    /** Formats the standard `Authorization` header needed to make a request
-     * @private
-     * @returns {string} - Authorization header in the form of `Bearer xxxxxxxxx`
-     */
 
-    _authorization() {
-        return `Bearer ${this.accessToken}`;
-    }
-};
 
-module.exports = Token;</code></pre>
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>user</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      object
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          user object.
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+  <h5 class="subsection-title">Properties:</h5>
+
+  
+
+<table class="props">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+
+    <tr>
+      
+        <td class="name"><code>externalId</code></td>
+      
+
+      <td class="type">
+        
+          
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+        
+      </td>
+
+        
+
+        
+
+        <td class="description last">
+          The unique identifier from the system calling the API for this user
+          </td>
+    </tr>
+
+  
+
+    <tr>
+      
+        <td class="name"><code>firstname</code></td>
+      
+
+      <td class="type">
+        
+          
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+        
+      </td>
+
+        
+
+        
+
+        <td class="description last">
+          The first name for the user
+          </td>
+    </tr>
+
+  
+
+    <tr>
+      
+        <td class="name"><code>lastName</code></td>
+      
+
+      <td class="type">
+        
+          
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+        
+      </td>
+
+        
+
+        
+
+        <td class="description last">
+          The last name for the user
+          </td>
+    </tr>
+
+  
+
+    <tr>
+      
+        <td class="name"><code>email</code></td>
+      
+
+      <td class="type">
+        
+          
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+        
+      </td>
+
+        
+
+        
+
+        <td class="description last">
+          The email for the user
+          </td>
+    </tr>
+
+  
+  </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="lib_models_user.model.js.html">lib/models/user.model.js</a>, <a href="lib_models_user.model.js.html#line5">line 5</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
   </article>
 </section>
 
-    
+
 
 
   </div>
