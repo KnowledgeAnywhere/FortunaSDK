@@ -72,7 +72,7 @@
       Fortuna SDK
     </h3>
 
-    <h3>Classes</h3><ul><li id="Token-nav"><a href="Token.html">Token</a><ul class='methods'><li data-type="method" id="Token-get-nav"><a href="Token.html#get">get</a></li></ul></li><li id="User-nav"><a href="User.html">User</a></li></ul><h3>Modules</h3><ul><li id="$-nav"><a href="Fortuna.module_$.html">$</a><ul class='methods'><li data-type="method" id="$-delete-nav"><a href="Fortuna.module_$.html#.delete">delete</a></li><li data-type="method" id="$-get-nav"><a href="Fortuna.module_$.html#.get">get</a></li><li data-type="method" id="$-post-nav"><a href="Fortuna.module_$.html#.post">post</a></li><li data-type="method" id="$-put-nav"><a href="Fortuna.module_$.html#.put">put</a></li></ul></li><li id="Auth-nav"><a href="module-Auth.html">Auth</a><ul class='methods'><li data-type="method" id="Auth-token-nav"><a href="module-Auth.html#.token">token</a></li></ul></li><li id="Ping-nav"><a href="module-Ping.html">Ping</a><ul class='methods'><li data-type="method" id="Ping-checkHealth-nav"><a href="module-Ping.html#.checkHealth">checkHealth</a></li></ul></li><li id="User-nav"><a href="module-User.html">User</a><ul class='methods'><li data-type="method" id="User-create-nav"><a href="module-User.html#.create">create</a></li><li data-type="method" id="User-findById-nav"><a href="module-User.html#.findById">findById</a></li></ul></li><li id="Users-nav"><a href="module-Users.html">Users</a></li></ul>
+    <h3>Classes</h3><ul><li id="Token-nav"><a href="Token.html">Token</a><ul class='methods'><li data-type="method" id="Token-get-nav"><a href="Token.html#get">get</a></li></ul></li><li id="User-nav"><a href="User.html">User</a></li></ul><h3>Modules</h3><ul><li id="$-nav"><a href="Fortuna.module_$.html">$</a><ul class='methods'><li data-type="method" id="$-delete-nav"><a href="Fortuna.module_$.html#.delete">delete</a></li><li data-type="method" id="$-get-nav"><a href="Fortuna.module_$.html#.get">get</a></li><li data-type="method" id="$-post-nav"><a href="Fortuna.module_$.html#.post">post</a></li><li data-type="method" id="$-put-nav"><a href="Fortuna.module_$.html#.put">put</a></li></ul></li><li id="Auth-nav"><a href="module-Auth.html">Auth</a><ul class='methods'><li data-type="method" id="Auth-token-nav"><a href="module-Auth.html#.token">token</a></li></ul></li><li id="Ping-nav"><a href="module-Ping.html">Ping</a><ul class='methods'><li data-type="method" id="Ping-checkHealth-nav"><a href="module-Ping.html#.checkHealth">checkHealth</a></li></ul></li><li id="User-nav"><a href="module-User.html">User</a><ul class='methods'><li data-type="method" id="User-create-nav"><a href="module-User.html#.create">create</a></li><li data-type="method" id="User-findById-nav"><a href="module-User.html#.findById">findById</a></li><li data-type="method" id="User-update-nav"><a href="module-User.html#.update">update</a></li></ul></li><li id="Users-nav"><a href="module-Users.html">Users</a></li></ul>
   </nav>
 
   <div id="main">
@@ -106,7 +106,6 @@ class User extends Fortuna {
     /**
      * @method findById
      * @static
-     * @async
      * @description Finds a single user by externalId.   Resolves to a promise containing the user.   If a user is not found with the specified externalId a 404 will be returned in the catch block.
      * @param externalId - externalId of the user to be looked up.
      * @example
@@ -129,19 +128,46 @@ class User extends Fortuna {
     /**
      * @method create
      * @static
-     * @async
-     * @description Finds a single user by externalId.   Resolves to a promise containing the user.   If a user is not found with the specified externalId a 404 will be returned in the catch block.
-     * @param user {object&lt;User>} - externalId of the user to be looked up.
+     * @description Creates a new user.
+     * @param user {object&lt;User>} - User object to update.
      * @example
-     * fortuna.user.findById()
-     *                .then((res) => console.log(user))
+     * fortuna.user.create()
+     *                .then((res) => console.log(res))
      *                .catch((ex) => console.log(ex));
-     * @returns {Promise&lt;User>} - Promise resolves to a object containing the user.
+     * @returns {Promise&lt;string>} - Promise resolves to a string with a success message.
      */
 
     static create(user) {
         return new Promise((resolve, reject) => {
-            super.get(`${config.user.endpoints.resource}/${externalId}`)
+            super.post(`${config.user.endpoints.resource}`)
+                .then((user) => {
+                    resolve(user);
+                })
+                .catch((ex) => reject(ex));
+        });
+    }
+
+    /**
+     * @method update
+     * @static
+     * @description Update a user.
+     * @param user {object&lt;User>} - User object to update.   Partial updates are allowed and only the fields passed in will be updated.
+     * @example
+     * var user = {
+     *  externalId: dd8e8d7djd88d3djz304,
+     *  firstName: Elle
+     *  lastName: Wilson
+     *  email: elle.wilson@knowledgeanywhere.com
+     * };
+     * fortuna.user.update(user)
+     *                .then((res) => console.log(res))
+     *                .catch((ex) => console.log(ex));
+     * @returns {Promise&lt;string>} - Promise resolves to a string with a success message.
+     */
+
+    static update(user) {
+        return new Promise((resolve, reject) => {
+            super.put(`${config.user.endpoints.resource}/${externalId}`)
                 .then((user) => {
                     resolve(user);
                 })
