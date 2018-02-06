@@ -72,7 +72,7 @@
       Fortuna SDK
     </h3>
 
-    <h3>Classes</h3><ul><li id="Token-nav"><a href="Token.html">Token</a><ul class='methods'><li data-type="method" id="Token-get-nav"><a href="Token.html#get">get</a></li></ul></li></ul><h3>Modules</h3><ul><li id="Auth-nav"><a href="module-Auth.html">Auth</a><ul class='methods'><li data-type="method" id="Auth-token-nav"><a href="module-Auth.html#.token">token</a></li></ul></li><li id="Ping-nav"><a href="module-Ping.html">Ping</a><ul class='methods'><li data-type="method" id="Ping-checkHealth-nav"><a href="module-Ping.html#.checkHealth">checkHealth</a></li></ul></li></ul>
+    <h3>Classes</h3><ul><li id="Token-nav"><a href="Token.html">Token</a><ul class='methods'><li data-type="method" id="Token-get-nav"><a href="Token.html#get">get</a></li></ul></li></ul><h3>Modules</h3><ul><li id="$-nav"><a href="Fortuna.module_$.html">$</a><ul class='methods'><li data-type="method" id="$-delete-nav"><a href="Fortuna.module_$.html#.delete">delete</a></li><li data-type="method" id="$-get-nav"><a href="Fortuna.module_$.html#.get">get</a></li><li data-type="method" id="$-post-nav"><a href="Fortuna.module_$.html#.post">post</a></li><li data-type="method" id="$-put-nav"><a href="Fortuna.module_$.html#.put">put</a></li></ul></li><li id="Auth-nav"><a href="module-Auth.html">Auth</a><ul class='methods'><li data-type="method" id="Auth-token-nav"><a href="module-Auth.html#.token">token</a></li></ul></li><li id="Ping-nav"><a href="module-Ping.html">Ping</a><ul class='methods'><li data-type="method" id="Ping-checkHealth-nav"><a href="module-Ping.html#.checkHealth">checkHealth</a></li></ul></li></ul>
   </nav>
 
   <div id="main">
@@ -99,7 +99,8 @@ const Token = require('../models/token.model');
 const LocalStorage = require('node-localstorage').LocalStorage;
 const ls = new LocalStorage('./.data');
 
-let env = Environment.get();
+const config = require('../../config.js');
+const env = Environment.get;
 
 /**
  * @module Auth
@@ -164,7 +165,7 @@ class Auth {
                 uri: this._getAuthEndpoint(),
                 json: true,
                 headers: {
-                    'User-Agent': 'FortunaSDK',
+                    'User-Agent': config.global.userAgent,
                     'content-type': 'application/x-www-form-urlencoded'
                 },
                 form: {
@@ -181,14 +182,10 @@ class Auth {
         });
     }
 
-    static _getAuthEndpoint() {
-        return `${env.apiURL}/auth/token`;
-    }
-
     /** @method _createToken
      * @private
      * @static
-     * @description Private function that
+     * @description Private function that creates a token
      */
 
     static async _createToken() {
@@ -197,7 +194,7 @@ class Auth {
             uri: this._getAuthEndpoint(),
             json: true,
             headers: {
-                'User-Agent': 'FortunaSDK',
+                'User-Agent': config.global.userAgent,
                 'content-type': 'application/x-www-form-urlencoded'
             },
             form: {
@@ -216,6 +213,10 @@ class Auth {
 
         return res;
 
+    }
+
+    static _getAuthEndpoint() {
+        return `${env.apiURL}/${config.auth.endpoints.token}`;
     }
 
 }

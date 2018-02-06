@@ -22,7 +22,7 @@ config.auth.endpoints.token = 'auth/token';
 
 config.ping.endpoints.checkHealth = 'ping';
 
-config.user.endpoints.resource = 'user'
+config.user.endpoints.resource = 'user';
 
 config.users.endpoints.find = 'users';
 

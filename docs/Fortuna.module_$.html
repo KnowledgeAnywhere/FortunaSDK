@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-      Token - Documentation
+      $ - Documentation
   </title>
 
   <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
@@ -76,7 +76,7 @@
   <div id="main">
     
       <h1 class="page-title">
-        Token
+        $
       </h1>
     
 
@@ -85,18 +85,83 @@
 <section>
   <header>
     
-      <h2>
-        
-        Token
-        
-      </h2>
-
-      
-    
   </header>
 
   <article>
     <div class="container-overview">
+      
+        
+            <div class="description">
+              The $ module contains methods needed by the child classes to effectivley call the API in a repeatable manner.
+            </div>
+        
+
+        
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="lib_modules_fortuna-api.module.js.html">lib/modules/fortuna-api.module.js</a>, <a href="lib_modules_fortuna-api.module.js.html#line11">line 11</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+        
+      
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+      <h3 class="subsection-title">Methods</h3>
+
       
         
 
@@ -104,13 +169,13 @@
   
 
   <span class='name-container'>
-    <a class="link-icon" href="#Token">
+    <a class="link-icon" href="#.delete">
       <svg height="20" width="20" style="fill: black;">
         <use xlink:href="#linkIcon"></use>
       </svg>
     </a>
-    <h4 class="name" id="Token">
-      <span class="type-signature"></span>new Token<span class="signature">(token)</span><span class="type-signature"></span>
+    <h4 class="name" id=".delete">
+      <span class="type-signature">(static) </span>delete<span class="signature">(endpoint)</span><span class="type-signature"> &rarr; {Promise.&lt;object>}</span>
     </h4>
   </span>
 
@@ -119,7 +184,7 @@
 
 
   <div class="description">
-    Create a Token
+    Performs a DELETE request.
   </div>
 
 
@@ -152,14 +217,14 @@
     
       <tr>
         
-          <td class="name"><code>token</code></td>
+          <td class="name"><code>endpoint</code></td>
         
 
         <td class="type">
           
             
     <span class="param-type">
-      object
+      string
     </span>
 
     
@@ -173,7 +238,7 @@
         
 
         <td class="description last">
-          Response from auth server.
+          to be called.   Should include the path params or a query string with the resource you intend to delete.
           
         </td>
       </tr>
@@ -182,238 +247,6 @@
   </tbody>
 </table>
 
-
-
-
-
-  <h5 class="subsection-title">Properties:</h5>
-
-  
-
-<table class="props">
-  <thead>
-    <tr>
-      
-        <th>Name</th>
-      
-
-      <th>Type</th>
-
-      
-
-      
-
-      <th class="last">Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    
-
-    <tr>
-      
-        <td class="name"><code>accessToken</code></td>
-      
-
-      <td class="type">
-        
-          
-    <span class="param-type">
-      string
-    </span>
-
-    
-
-
-        
-      </td>
-
-        
-
-        
-
-        <td class="description last">
-          Access Token, used to make requests.
-          </td>
-    </tr>
-
-  
-
-    <tr>
-      
-        <td class="name"><code>issued</code></td>
-      
-
-      <td class="type">
-        
-          
-    <span class="param-type">
-      datetime
-    </span>
-
-    
-
-
-        
-      </td>
-
-        
-
-        
-
-        <td class="description last">
-          Issue date
-          </td>
-    </tr>
-
-  
-
-    <tr>
-      
-        <td class="name"><code>expires</code></td>
-      
-
-      <td class="type">
-        
-          
-    <span class="param-type">
-      datetime
-    </span>
-
-    
-
-
-        
-      </td>
-
-        
-
-        
-
-        <td class="description last">
-          Expiry date
-          </td>
-    </tr>
-
-  
-
-    <tr>
-      
-        <td class="name"><code>expiresIn</code></td>
-      
-
-      <td class="type">
-        
-          
-    <span class="param-type">
-      int
-    </span>
-
-    
-
-
-        
-      </td>
-
-        
-
-        
-
-        <td class="description last">
-          Seconds till expiration.
-          </td>
-    </tr>
-
-  
-
-    <tr>
-      
-        <td class="name"><code>tokenType</code></td>
-      
-
-      <td class="type">
-        
-          
-    <span class="param-type">
-      string
-    </span>
-
-    
-
-
-        
-      </td>
-
-        
-
-        
-
-        <td class="description last">
-          Type of token.    (Bearer)
-          </td>
-    </tr>
-
-  
-
-    <tr>
-      
-        <td class="name"><code>authorization</code></td>
-      
-
-      <td class="type">
-        
-          
-    <span class="param-type">
-      string
-    </span>
-
-    
-
-
-        
-      </td>
-
-        
-
-        
-
-        <td class="description last">
-          Authorization header content.    Example `Bearer xxxxxxxxx`
-          </td>
-    </tr>
-
-  
-
-    <tr>
-      
-        <td class="name"><code>isValid</code></td>
-      
-
-      <td class="type">
-        
-          
-    <span class="param-type">
-      bool
-    </span>
-
-    
-
-
-        
-      </td>
-
-        
-
-        
-
-        <td class="description last">
-          Checks to see if the token is "fresh"  or expired
-          </td>
-    </tr>
-
-  
-  </tbody>
-</table>
 
 
 
@@ -449,7 +282,167 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="lib_models_token.model.js.html">lib/models/token.model.js</a>, <a href="lib_models_token.model.js.html#line7">line 7</a>
+          <a href="lib_modules_fortuna-api.module.js.html">lib/modules/fortuna-api.module.js</a>, <a href="lib_modules_fortuna-api.module.js.html#line113">line 113</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#delete-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="delete-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>fortuna.$.delete('api/posts/delete/123456');</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.get">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".get">
+      <span class="type-signature">(static) </span>get<span class="signature">(endpoint)</span><span class="type-signature"> &rarr; {Promise.&lt;object>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    Performs a GET request.
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>endpoint</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          to be called.
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="lib_modules_fortuna-api.module.js.html">lib/modules/fortuna-api.module.js</a>, <a href="lib_modules_fortuna-api.module.js.html#line18">line 18</a>
         </li>
       </ul>
     </dd>
@@ -476,37 +469,19 @@
 
 
       
-    </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-      <h3 class="subsection-title">Methods</h3>
-
-      
         
 
 
   
 
   <span class='name-container'>
-    <a class="link-icon" href="#get">
+    <a class="link-icon" href="#.post">
       <svg height="20" width="20" style="fill: black;">
         <use xlink:href="#linkIcon"></use>
       </svg>
     </a>
-    <h4 class="name" id="get">
-      <span class="type-signature"></span>get<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span>
+    <h4 class="name" id=".post">
+      <span class="type-signature">(static) </span>post<span class="signature">(endpoint, JSON)</span><span class="type-signature"> &rarr; {Promise.&lt;object>}</span>
     </h4>
   </span>
 
@@ -515,13 +490,97 @@
 
 
   <div class="description">
-    Retreives the token
+    Performs a POST request.
   </div>
 
 
 
 
 
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>endpoint</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          to be called.
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>JSON</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      object
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          data to be sent to the server
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
 
 
 
@@ -558,7 +617,182 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="lib_models_token.model.js.html">lib/models/token.model.js</a>, <a href="lib_models_token.model.js.html#line34">line 34</a>
+          <a href="lib_modules_fortuna-api.module.js.html">lib/modules/fortuna-api.module.js</a>, <a href="lib_modules_fortuna-api.module.js.html#line48">line 48</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.put">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".put">
+      <span class="type-signature">(static) </span>put<span class="signature">(endpoint, JSON)</span><span class="type-signature"> &rarr; {Promise.&lt;object>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    Performs a PUT request.   You can also send in a blank object and append a path param to the endpoint.
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>endpoint</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          to be called.
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>JSON</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      object
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          data to be sent to the server
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="lib_modules_fortuna-api.module.js.html">lib/modules/fortuna-api.module.js</a>, <a href="lib_modules_fortuna-api.module.js.html#line80">line 80</a>
         </li>
       </ul>
     </dd>

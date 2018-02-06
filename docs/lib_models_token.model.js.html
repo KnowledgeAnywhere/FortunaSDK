@@ -72,7 +72,7 @@
       Fortuna SDK
     </h3>
 
-    <h3>Classes</h3><ul><li id="Token-nav"><a href="Token.html">Token</a><ul class='methods'><li data-type="method" id="Token-get-nav"><a href="Token.html#get">get</a></li></ul></li></ul><h3>Modules</h3><ul><li id="Auth-nav"><a href="module-Auth.html">Auth</a><ul class='methods'><li data-type="method" id="Auth-token-nav"><a href="module-Auth.html#.token">token</a></li></ul></li><li id="Ping-nav"><a href="module-Ping.html">Ping</a><ul class='methods'><li data-type="method" id="Ping-checkHealth-nav"><a href="module-Ping.html#.checkHealth">checkHealth</a></li></ul></li></ul>
+    <h3>Classes</h3><ul><li id="Token-nav"><a href="Token.html">Token</a><ul class='methods'><li data-type="method" id="Token-get-nav"><a href="Token.html#get">get</a></li></ul></li></ul><h3>Modules</h3><ul><li id="$-nav"><a href="Fortuna.module_$.html">$</a><ul class='methods'><li data-type="method" id="$-delete-nav"><a href="Fortuna.module_$.html#.delete">delete</a></li><li data-type="method" id="$-get-nav"><a href="Fortuna.module_$.html#.get">get</a></li><li data-type="method" id="$-post-nav"><a href="Fortuna.module_$.html#.post">post</a></li><li data-type="method" id="$-put-nav"><a href="Fortuna.module_$.html#.put">put</a></li></ul></li><li id="Auth-nav"><a href="module-Auth.html">Auth</a><ul class='methods'><li data-type="method" id="Auth-token-nav"><a href="module-Auth.html#.token">token</a></li></ul></li><li id="Ping-nav"><a href="module-Ping.html">Ping</a><ul class='methods'><li data-type="method" id="Ping-checkHealth-nav"><a href="module-Ping.html#.checkHealth">checkHealth</a></li></ul></li></ul>
   </nav>
 
   <div id="main">
@@ -97,7 +97,7 @@ class Token {
      * @class Token
      * @type Token
      * @param {object} token - Response from auth server.
-     * @prop AccessToken {string} - Access Token, used to make requests.
+     * @prop accessToken {string} - Access Token, used to make requests.
      * @prop issued {datetime} - Issue date
      * @prop expires {datetime} - Expiry date
      * @prop expiresIn {int} - Seconds till expiration.
@@ -125,7 +125,7 @@ class Token {
     }
 
     /** Checks to see if a token has expired.
-     * @private 
+     * @private
      * @returns {bool} - True if token is still valid
      */
 
