@@ -6,7 +6,7 @@ SDK for Interacting with the Fortuna LMS API.   *This SDK is still in developmen
 
 contact support@knowledgeanywhere.com if you would like more information.
 
-[Documentation](https://knowledgeanywhere.githubpages.com/FortunaSDK)
+[Documentation](https://knowledgeanywhere.github.io/FortunaSDK/)
 
 ## Installation and Getting Started
 
