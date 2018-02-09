@@ -14,11 +14,7 @@ const Fortuna = {};
 // Undocumented Module
 Fortuna.$ = FortunaAPI;
 
-/**
- * @name Fortuna#Ping
- * @see Ping
- * @alias fortuna.ping
- */
+
 Fortuna.ping = Ping;
 
 /**
