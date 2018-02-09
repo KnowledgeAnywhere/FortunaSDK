@@ -37,30 +37,6 @@
                     <li class='h5'><span>Static members</span></li>
                     
                       <li><a
-                        href='#fortuna'
-                        class='regular pre-open'>
-                        .$
-                      </a></li>
-                    
-                      <li><a
-                        href='#fortunaping'
-                        class='regular pre-open'>
-                        .Ping
-                      </a></li>
-                    
-                      <li><a
-                        href='#fortunaauth'
-                        class='regular pre-open'>
-                        .Auth
-                      </a></li>
-                    
-                      <li><a
-                        href='#fortunauser'
-                        class='regular pre-open'>
-                        .User
-                      </a></li>
-                    
-                      <li><a
                         href='#fortunausers'
                         class='regular pre-open'>
                         .Users
@@ -77,111 +53,103 @@
               
                 
                 <li><a
-                  href='#fortunaping'
-                  class="">
-                  Fortuna#Ping
-                  
+                  href='#fortunaapi'
+                  class=" toggle-sibling">
+                  FortunaAPI
+                  <span class='icon'>▸</span>
                 </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#fortunaapiget'
+                        class='regular pre-open'>
+                        .get
+                      </a></li>
+                    
+                      <li><a
+                        href='#fortunaapipost'
+                        class='regular pre-open'>
+                        .post
+                      </a></li>
+                    
+                      <li><a
+                        href='#fortunaapiput'
+                        class='regular pre-open'>
+                        .put
+                      </a></li>
+                    
+                      <li><a
+                        href='#fortunaapidelete'
+                        class='regular pre-open'>
+                        .delete
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
                 
                 </li>
               
                 
                 <li><a
-                  href='#fortunaauth'
-                  class="">
-                  Fortuna#Auth
-                  
+                  href='#ping'
+                  class=" toggle-sibling">
+                  Ping
+                  <span class='icon'>▸</span>
                 </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#pingcheckhealth'
+                        class='regular pre-open'>
+                        #checkHealth
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
                 
                 </li>
               
                 
                 <li><a
-                  href='#fortunauser'
-                  class="">
-                  Fortuna#User
-                  
+                  href='#auth'
+                  class=" toggle-sibling">
+                  Auth
+                  <span class='icon'>▸</span>
                 </a>
                 
-                </li>
-              
-                
-                <li><a
-                  href='#fortunausers'
-                  class="">
-                  Fortuna#Users
+                <div class='toggle-target display-none'>
                   
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#get'
-                  class="">
-                  get
                   
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#post'
-                  class="">
-                  post
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#authtoken'
+                        class='regular pre-open'>
+                        #token
+                      </a></li>
+                      
+                    </ul>
                   
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#put'
-                  class="">
-                  put
                   
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#delete'
-                  class="">
-                  delete
                   
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#_handleex'
-                  class="">
-                  _handleEx
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#checkhealth'
-                  class="">
-                  checkHealth
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#token'
-                  class="">
-                  token
-                  
-                </a>
+                </div>
                 
                 </li>
               
@@ -215,11 +183,29 @@
               
                 
                 <li><a
-                  href='#findbyid'
-                  class="">
-                  findById
-                  
+                  href='#user'
+                  class=" toggle-sibling">
+                  User
+                  <span class='icon'>▸</span>
                 </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#userfindbyid'
+                        class='regular pre-open'>
+                        .findById
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
                 
                 </li>
               
@@ -309,207 +295,6 @@
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='fortuna'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>$</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>The $ module contains methods needed by the child classes to effectivley call the API in a repeatable manner.</p>
-
-
-  <div class='pre p1 fill-light mt0'>$</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='fortunaping'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>Ping</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>The ping module is a utility class used to determine service availability.   WARNING:  This module may be deprecated or subject to change.
-It's primary usage at this stage is for testing.   Documentation will most certainly be dropped beyond the initial full release.</p>
-
-
-  <div class='pre p1 fill-light mt0'>Ping</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="#fortuna">Fortuna</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='fortunaauth'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>Auth</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>Methods for handling authentication.  Usage of this module may not be needed.   When making calls to the API using other modules in this sdk, authorization is handeled for you.
-This module is available if you would like to use it to make standard restful calls to the API outside of the SDK.</p>
-
-
-  <div class='pre p1 fill-light mt0'>Auth</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='fortunauser'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>User</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>The user module is a utility class used to determine service availability.   WARNING:  This module may be deprecated or subject to change.
-It's primary usage at this stage is for testing.   Documentation will most certainly be dropped beyond the initial full release.</p>
-
-
-  <div class='pre p1 fill-light mt0'>User</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="#fortuna">Fortuna</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
     <div class='border-bottom' id='fortunausers'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -581,63 +366,18 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='fortunaping'>
-      Fortuna#Ping
+    <h3 class='fl m0' id='fortunaapi'>
+      FortunaAPI
     </h3>
     
     
   </div>
   
 
-  
+  <p>FortunaAPI</p>
 
-  <div class='pre p1 fill-light mt0'>Fortuna#Ping</div>
-  
-  
 
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='fortunaauth'>
-      Fortuna#Auth
-    </h3>
-    
-    
-  </div>
-  
-
-  
-
-  <div class='pre p1 fill-light mt0'>Fortuna#Auth</div>
+  <div class='pre p1 fill-light mt0'>new FortunaAPI()</div>
   
   
 
@@ -659,118 +399,19 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='fortunaapiget'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>get(endpoint)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='fortunauser'>
-      Fortuna#User
-    </h3>
-    
-    
-  </div>
-  
-
-  
-
-  <div class='pre p1 fill-light mt0'>Fortuna#User</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='fortunausers'>
-      Fortuna#Users
-    </h3>
-    
-    
-  </div>
-  
-
-  
-
-  <div class='pre p1 fill-light mt0'>Fortuna#Users</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='get'>
-      get
-    </h3>
-    
-    
-  </div>
   
 
   <p>Performs a GET request.</p>
@@ -826,26 +467,25 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 </section>
 
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
+      </div>
+    </div>
   
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='post'>
-      post
-    </h3>
-    
-    
-  </div>
+    <div class='border-bottom' id='fortunaapipost'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>post(endpoint, data, JSON)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
   
 
   <p>Performs a POST request.</p>
 
 
-  <div class='pre p1 fill-light mt0'>post(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, JSON: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
+  <div class='pre p1 fill-light mt0'>post(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any, JSON: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
   
   
 
@@ -865,6 +505,14 @@ It's primary usage at this stage is for testing.   Documentation will most certa
             <span class='code bold'>endpoint</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    to be called.
 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
@@ -904,26 +552,25 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 </section>
 
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
+      </div>
+    </div>
   
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='put'>
-      put
-    </h3>
-    
-    
-  </div>
+    <div class='border-bottom' id='fortunaapiput'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>put(endpoint, data, JSON)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
   
 
   <p>Performs a PUT request.   You can also send in a blank object and append a path param to the endpoint.</p>
 
 
-  <div class='pre p1 fill-light mt0'>put(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, JSON: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
+  <div class='pre p1 fill-light mt0'>put(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any, JSON: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
   
   
 
@@ -943,6 +590,14 @@ It's primary usage at this stage is for testing.   Documentation will most certa
             <span class='code bold'>endpoint</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    to be called.
 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
@@ -982,26 +637,25 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 </section>
 
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
+      </div>
+    </div>
   
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='delete'>
-      delete
-    </h3>
-    
-    
-  </div>
+    <div class='border-bottom' id='fortunaapidelete'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>delete(endpoint, data)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
   
 
   <p>Performs a DELETE request.</p>
 
 
-  <div class='pre p1 fill-light mt0'>delete(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
+  <div class='pre p1 fill-light mt0'>delete(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
   
   
 
@@ -1021,6 +675,14 @@ It's primary usage at this stage is for testing.   Documentation will most certa
             <span class='code bold'>endpoint</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    to be called.   Should include the path params or a query string with the resource you intend to delete.
 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>
@@ -1057,58 +719,10 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 </section>
 
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='_handleex'>
-      _handleEx
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Exceptions from the API are piped to this method.   In the future this will support a formal logger function.</p>
-
-
-  <div class='pre p1 fill-light mt0'>_handleEx(ex: any)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>ex</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
+      </div>
     </div>
   
-
-  
-
-  
-
-  
-
-  
+</div>
 
   
 
@@ -1125,12 +739,62 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='checkhealth'>
-      checkHealth
+    <h3 class='fl m0' id='ping'>
+      Ping
     </h3>
     
     
   </div>
+  
+
+  <p>The ping module is a utility class used to determine service availability.   WARNING:  This module may be deprecated or subject to change.
+It's primary usage at this stage is for testing.   Documentation will most certainly be dropped beyond the initial full release.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Ping</div>
+  
+  
+    <p>
+      Extends
+      
+        <a href="#fortunaapi">FortunaAPI</a>
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='pingcheckhealth'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>checkHealth()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
   
 
   <p>Checks service health.    If a exception is returned then the service may not be available.</p>
@@ -1180,6 +844,16 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 </section>
 
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
           
         
           
@@ -1188,12 +862,55 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='token'>
-      token
+    <h3 class='fl m0' id='auth'>
+      Auth
     </h3>
     
     
   </div>
+  
+
+  <p>Methods for handling authentication.  Usage of this module may not be needed.   When making calls to the API using other modules in this sdk, authorization is handeled for you.
+This module is available if you would like to use it to make standard restful calls to the API outside of the SDK.</p>
+
+
+  <div class='pre p1 fill-light mt0'>new Auth()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='authtoken'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>token()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
   
 
   <p>Creates a new token from the Fortuna API Authorization server and stores it on disk.
@@ -1248,6 +965,16 @@ Subsequent calls will check the freshness of the token and create a new one if n
   
 </section>
 
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+</section>
+
           
         
           
@@ -1264,7 +991,7 @@ Subsequent calls will check the freshness of the token and create a new one if n
   </div>
   
 
-  <p>Create a Token</p>
+  <p>Token</p>
 
 
   <div class='pre p1 fill-light mt0'>new Token(token: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</div>
@@ -1285,7 +1012,7 @@ Subsequent calls will check the freshness of the token and create a new one if n
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>token</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
-	    Response from auth server.
+	    Response from auth server to serialize into a Token.
 
           </div>
           
@@ -1294,6 +1021,61 @@ Subsequent calls will check the freshness of the token and create a new one if n
     </div>
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>accessToken</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          : Access Token, used to make requests.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>issued</span> <code class='quiet'>(datetime)</code>
+          : Issue date
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>expires</span> <code class='quiet'>(datetime)</code>
+          : Expiry date
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>expiresIn</span> <code class='quiet'>(int)</code>
+          : Seconds till expiration.   Epcoch Unix Timestamp
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>tokenType</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          : Type of token.    (Bearer)
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>authorization</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          : Authorization header content.    Example 
+<code>Bearer xxxxxxxxx</code>
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>isValid</span> <code class='quiet'>(bool)</code>
+          : Checks to see if the token is "fresh"  or expired
+
+          
+        </div>
+      
+    </div>
   
 
   
@@ -1377,18 +1159,66 @@ Subsequent calls will check the freshness of the token and create a new one if n
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='findbyid'>
-      findById
+    <h3 class='fl m0' id='user'>
+      User
     </h3>
     
     
   </div>
   
 
+  <p>The user module is a utility class used to determine service availability.   WARNING:  This module may be deprecated or subject to change.
+It's primary usage at this stage is for testing.   Documentation will most certainly be dropped beyond the initial full release.</p>
+
+
+  <div class='pre p1 fill-light mt0'>new User()</div>
+  
+  
+    <p>
+      Extends
+      
+        <a href="#fortunaapi">FortunaAPI</a>
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='userfindbyid'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>findById(externalId)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
   <p>Finds a single user by externalId.   Resolves to a promise containing the user.   If a user is not found with the specified externalId a 404 will be returned in the catch block.</p>
 
 
-  <div class='pre p1 fill-light mt0'>findById(externalId: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;User></div>
+  <div class='pre p1 fill-light mt0'>findById(externalId: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#user">User</a>></div>
   
   
 
@@ -1420,7 +1250,7 @@ Subsequent calls will check the freshness of the token and create a new one if n
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;User></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#user">User</a>></code>:
         Promise resolves to a object containing the user.
 
       
@@ -1438,6 +1268,18 @@ Subsequent calls will check the freshness of the token and create a new one if n
                .catch(<span class="hljs-function">(<span class="hljs-params">ex</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(ex));</pre>
     
   
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
 
   
 
