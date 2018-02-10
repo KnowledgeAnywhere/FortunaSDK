@@ -25,34 +25,6 @@
               
                 
                 <li><a
-                  href='#fortuna'
-                  class=" toggle-sibling">
-                  Fortuna
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
-                      <li><a
-                        href='#fortunausers'
-                        class='regular pre-open'>
-                        .Users
-                      </a></li>
-                    
-                    </ul>
-                  
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-                
-                <li><a
                   href='#fortunaapi'
                   class=" toggle-sibling">
                   FortunaAPI
@@ -61,35 +33,35 @@
                 
                 <div class='toggle-target display-none'>
                   
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
                       <li><a
                         href='#fortunaapiget'
                         class='regular pre-open'>
-                        .get
+                        #get
                       </a></li>
-                    
+                      
                       <li><a
                         href='#fortunaapipost'
                         class='regular pre-open'>
-                        .post
+                        #post
                       </a></li>
-                    
+                      
                       <li><a
                         href='#fortunaapiput'
                         class='regular pre-open'>
-                        .put
+                        #put
                       </a></li>
-                    
+                      
                       <li><a
                         href='#fortunaapidelete'
                         class='regular pre-open'>
-                        .delete
+                        #delete
                       </a></li>
-                    
+                      
                     </ul>
-                  
                   
                   
                   
@@ -191,51 +163,45 @@
                 
                 <div class='toggle-target display-none'>
                   
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#userfind'
+                        class='regular pre-open'>
+                        #find
+                      </a></li>
+                      
                       <li><a
                         href='#userfindbyid'
                         class='regular pre-open'>
-                        .findById
+                        #findById
                       </a></li>
-                    
+                      
+                      <li><a
+                        href='#usercreate'
+                        class='regular pre-open'>
+                        #create
+                      </a></li>
+                      
+                      <li><a
+                        href='#userupdate'
+                        class='regular pre-open'>
+                        #update
+                      </a></li>
+                      
+                      <li><a
+                        href='#userdeactivate'
+                        class='regular pre-open'>
+                        #deactivate
+                      </a></li>
+                      
                     </ul>
                   
                   
                   
-                  
                 </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#create'
-                  class="">
-                  create
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#update'
-                  class="">
-                  update
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#find'
-                  class="">
-                  find
-                  
-                </a>
                 
                 </li>
               
@@ -254,118 +220,6 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='fortuna'>
-      Fortuna
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Top-Level namespace for the Fortuna SDK.</p>
-
-
-  <div class='pre p1 fill-light mt0'>Fortuna</div>
-  
-    <p>
-      Type:
-      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='fortunausers'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>Users</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>The users module is a utility class used to determine service availability.   WARNING:  This module may be deprecated or subject to change.
-It's primary usage at this stage is for testing.   Documentation will most certainly be dropped beyond the initial full release.</p>
-
-
-  <div class='pre p1 fill-light mt0'>Users</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="#fortuna">Fortuna</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='fortunaapi'>
       FortunaAPI
     </h3>
@@ -374,7 +228,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   </div>
   
 
-  <p>FortunaAPI</p>
+  <p>.   This module is available for use and is used by all other modules to call the API in a consistent way and handles authentication.    Use the methods to manually make a request to the API.</p>
 
 
   <div class='pre p1 fill-light mt0'>new FortunaAPI()</div>
@@ -399,7 +253,9 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 
   
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
     <div class='border-bottom' id='fortunaapiget'>
@@ -417,7 +273,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   <p>Performs a GET request.</p>
 
 
-  <div class='pre p1 fill-light mt0'>get(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
+  <div class='pre p1 fill-light mt0'>get(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
   
   
 
@@ -449,7 +305,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
         JSON payload returned from the API
 
       
@@ -485,7 +341,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   <p>Performs a POST request.</p>
 
 
-  <div class='pre p1 fill-light mt0'>post(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any, JSON: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
+  <div class='pre p1 fill-light mt0'>post(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any, JSON: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
   
   
 
@@ -534,7 +390,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
         JSON payload returned from the API
 
       
@@ -570,7 +426,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   <p>Performs a PUT request.   You can also send in a blank object and append a path param to the endpoint.</p>
 
 
-  <div class='pre p1 fill-light mt0'>put(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any, JSON: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
+  <div class='pre p1 fill-light mt0'>put(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any, JSON: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
   
   
 
@@ -619,7 +475,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
         JSON payload returned from the API
 
       
@@ -655,7 +511,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   <p>Performs a DELETE request.</p>
 
 
-  <div class='pre p1 fill-light mt0'>delete(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></div>
+  <div class='pre p1 fill-light mt0'>delete(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, data: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
   
   
 
@@ -695,7 +551,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
         JSON payload returned from the API
 
       
@@ -723,8 +579,6 @@ It's primary usage at this stage is for testing.   Documentation will most certa
     </div>
   
 </div>
-
-  
 
   
 
@@ -832,7 +686,9 @@ It's primary usage at this stage is for testing.   Documentation will most certa
     
       
       <pre class='p1 overflow-auto round fill-light'>fortuna.ping.checkHealth()
-               .then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(res))
+               .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+                 <span class="hljs-comment">// Server is responding</span>
+                 })
                .catch(<span class="hljs-function">(<span class="hljs-params">ex</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(ex));</pre>
     
   
@@ -1167,8 +1023,7 @@ Subsequent calls will check the freshness of the token and create a new one if n
   </div>
   
 
-  <p>The user module is a utility class used to determine service availability.   WARNING:  This module may be deprecated or subject to change.
-It's primary usage at this stage is for testing.   Documentation will most certainly be dropped beyond the initial full release.</p>
+  <p>The user module contains functions related to creating, reading, updating and deactivating users.</p>
 
 
   <div class='pre p1 fill-light mt0'>new User()</div>
@@ -1200,14 +1055,16 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 
   
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='userfindbyid'>
+    <div class='border-bottom' id='userfind'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>findById(externalId)</span>
+            <span class='code strong strong truncate'>find(searchParams)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1215,10 +1072,10 @@ It's primary usage at this stage is for testing.   Documentation will most certa
 
   
 
-  <p>Finds a single user by externalId.   Resolves to a promise containing the user.   If a user is not found with the specified externalId a 404 will be returned in the catch block.</p>
+  <p>Search for users</p>
 
 
-  <div class='pre p1 fill-light mt0'>findById(externalId: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#user">User</a>></div>
+  <div class='pre p1 fill-light mt0'>find(searchParams: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#user">User</a>>></div>
   
   
 
@@ -1235,7 +1092,75 @@ It's primary usage at this stage is for testing.   Documentation will most certa
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>externalId</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>searchParams</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Object containing search parameters.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#user">User</a>>></code>:
+        Resolves to a promise containing an array of users.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='userfindbyid'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>findById(externalId)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Finds a single user by externalId.   Resolves to a promise containing the user.   If a user is not found with the specified externalId a 404 will be returned in the catch block.</p>
+
+
+  <div class='pre p1 fill-light mt0'>findById(externalId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#user">User</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>externalId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    externalId of the user to be looked up.
 
           </div>
@@ -1279,35 +1204,22 @@ It's primary usage at this stage is for testing.   Documentation will most certa
       </div>
     </div>
   
-</div>
+    <div class='border-bottom' id='usercreate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>create(user)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='create'>
-      create
-    </h3>
-    
-    
-  </div>
   
 
   <p>Creates a new user.</p>
 
 
-  <div class='pre p1 fill-light mt0'>create(user: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
+  <div class='pre p1 fill-light mt0'>create(user: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>&#x3C;<a href="#user">User</a>>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
   
   
 
@@ -1324,10 +1236,9 @@ It's primary usage at this stage is for testing.   Documentation will most certa
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>user</span> <code class='quiet'>(any)</code>
-	    {object
-<User>
-} - User object to update.
+            <span class='code bold'>user</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>&#x3C;<a href="#user">User</a>>)</code>
+	    User object to update.  @see 
+<a href="#user">User</a>
 
           </div>
           
@@ -1341,8 +1252,8 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>:
-        Promise resolves to a string with a success message.
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
+        Promise resolves to a object.    The warnings array will contain additional info about invalid data.
 
       
     
@@ -1354,8 +1265,14 @@ It's primary usage at this stage is for testing.   Documentation will most certa
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>fortuna.user.create()
-               .then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(res))
+      <pre class='p1 overflow-auto round fill-light'>fortuna.user.create(user)
+            .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+                 <span class="hljs-comment">// {</span>
+                 <span class="hljs-comment">//  message: "USER_PROVISION_SUCCESS",</span>
+                 <span class="hljs-comment">//  hasWarnings: false,</span>
+                 <span class="hljs-comment">//  warnings: []</span>
+                 <span class="hljs-comment">// }</span>
+             })
                .catch(<span class="hljs-function">(<span class="hljs-params">ex</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(ex));</pre>
     
   
@@ -1367,26 +1284,25 @@ It's primary usage at this stage is for testing.   Documentation will most certa
   
 </section>
 
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='userupdate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>update(user)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='update'>
-      update
-    </h3>
-    
-    
-  </div>
-  
 
-  <p>Update a user.</p>
+  <p>Update a user. Partial updates are allowed and only the fields passed in will be updated.  Note, updating <code>email</code> and <code>externalId</code> is not supported at this time.  @see <a href="#user">User</a></p>
 
 
-  <div class='pre p1 fill-light mt0'>update(user: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
+  <div class='pre p1 fill-light mt0'>update(user: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>&#x3C;<a href="#user">User</a>>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
   
   
 
@@ -1403,10 +1319,105 @@ It's primary usage at this stage is for testing.   Documentation will most certa
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>user</span> <code class='quiet'>(any)</code>
-	    {object
-<User>
-} - User object to update.   Partial updates are allowed and only the fields passed in will be updated.
+            <span class='code bold'>user</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>&#x3C;<a href="#user">User</a>>)</code>
+	    User object to update.
+<br>
+
+
+fortuna.user.create(user)
+.then(res => {
+// {
+//  message: "USER_UPDATE_SUCCESS",
+//  hasWarnings: false,
+//  warnings: []
+// }
+})
+.catch((ex) => console.log(ex));
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
+        Promise resolves to a object.    The warnings array will contain additional info about invalid data.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='userdeactivate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>deactivate(externalId, user)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>deactivates a user.</p>
+
+
+  <div class='pre p1 fill-light mt0'>deactivate(externalId: any, user: strig): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>externalId</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>user</span> <code class='quiet'>(strig)</code>
+	    externalId
+fortuna.user.deactivate(externalId)
+.then(res => {
+// user is deactivates
+<br>
+
+
+}
+})
+.catch((ex) => console.log(ex));
 
           </div>
           
@@ -1421,7 +1432,7 @@ It's primary usage at this stage is for testing.   Documentation will most certa
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>:
-        Promise resolves to a string with a success message.
+        Promise resolves to a success message.
 
       
     
@@ -1429,20 +1440,6 @@ It's primary usage at this stage is for testing.   Documentation will most certa
 
   
 
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">var</span> user = {
- <span class="hljs-attr">externalId</span>: dd8e8d7djd88d3djz304,
- <span class="hljs-attr">firstName</span>: Elle
- lastName: Wilson
- email: elle.wilson@knowledgeanywhere.com
-};
-fortuna.user.update(user)
-               .then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(res))
-               .catch(<span class="hljs-function">(<span class="hljs-params">ex</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(ex));</pre>
-    
   
 
   
@@ -1452,47 +1449,10 @@ fortuna.user.update(user)
   
 </section>
 
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
+      </div>
+    </div>
   
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='find'>
-      find
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>find users</p>
-
-
-  <div class='pre p1 fill-light mt0'>find()</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+</div>
 
   
 
