@@ -6,11 +6,11 @@
   "scripts": {
     "test": "mocha spec/fortuna-api.spec.js --timeout 5000",
     "manual": "node spec/manual-tests.js",
-    "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha spec/fortuna-api.spec.js",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "docjs": "documentation build index.js -f html -o docs",
-    "docjs2": "documentation build index.js -f json -o docs2"
+    "docjs": "documentation build index.js -f html -o docs --config documentation.yml",
+    "docjs2": "documentation build index.js -f html -o docs",
+    "docjs-json": "documentation build index.js -f json -o docsjson"
   },
   "repository": {
     "type": "git",

@@ -1,22 +1,54 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/user.module.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/user.module.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 
 const Fortuna = require('./fortuna-api.module');
 const config = require('../../config.js');
 
-/** User
+/** Users
  * @extends FortunaAPI
- * @description The user module contains functions related to creating, reading, updating and deactivating users.
+ * @description The users module contains functions related to creating, reading, updating and deactivating users.
  */
 
-class User extends Fortuna {
+class Users extends Fortuna {
 
     constructor() {
         super();
     }
 
-    /** Search for users
-     * @param {Object} searchParams - Object containing search parameters.
-     * @returns {Promise<User[]>} - Resolves to a promise containing an array of users.
+    /** Search for users.   Returns 1000 users at a time.   Use the `offset` parameter to loop through the LMS's entire record set.
+     * @param {Object} searchParams - Object containing search parameters.   See properties.
+     * @property {string} startdate - Filter users by the date they were created.  Should be a unix timestamp (ms) .   Optional.   Defaults to 0 (midnight 1970, UTC) 
+     * @property {string} enddate - Filter users by the date they were created.  Should be a unix timestamp (ms) .   Optional.   Defaults to the current  UTC time. (same as calling `new Date().getTime()`)
+     * @property {string[]} externalIds -   Filters users by their `externalId`
+     * @property {int} offset - num of records to offset.     Returns the first 1000 records of the collection by default (`offset: 0`).   A offset of 1000 (`offset: 1000`) will return the next 1000 records.
+     * @returns {Promise&lt;User[]>} - Resolves to a promise containing an array of users.
      */
     find(searchParams) {
         return new Promise((resolve, reject) => {
@@ -36,7 +68,7 @@ class User extends Fortuna {
      * fortuna.user.findById()
      *                .then((res) => console.log(user))
      *                .catch((ex) => console.log(ex));
-     * @returns {Promise<User>} - Promise resolves to a object containing the user.
+     * @returns {Promise&lt;User>} - Promise resolves to a object containing the user.
      */
 
     findById(externalId) {
@@ -52,7 +84,7 @@ class User extends Fortuna {
     /**
      * create
      * @description Creates a new user.
-     * @param {object<User>} user - User object to update.  @see {@link User}
+     * @param {object&lt;User>} user - User object to update.  @see {@link User}
      * @example
      * fortuna.user.create(user)
      *             .then(res => {
@@ -63,7 +95,7 @@ class User extends Fortuna {
      *                  // }
      *              })
      *                .catch((ex) => console.log(ex));
-     * @returns {Promise<Object>} - Promise resolves to a object.    The warnings array will contain additional info about invalid data.
+     * @returns {Promise&lt;Object>} - Promise resolves to a object.    The warnings array will contain additional info about invalid data.
      */
 
     create(user) {
@@ -78,7 +110,7 @@ class User extends Fortuna {
 
     /** update
      * @description Update a user. Partial updates are allowed and only the fields passed in will be updated.  Note, updating `email` and `externalId` is not supported at this time.  @see {@link User}
-     * @param {object<User>} user  - User object to update.   
+     * @param {object&lt;User>} user  - User object to update.   
      * fortuna.user.create(user)
      *             .then(res => {
      *                  // {
@@ -88,7 +120,7 @@ class User extends Fortuna {
      *                  // }
      *              })
      *                .catch((ex) => console.log(ex));
-     * @returns {Promise<Object>} - Promise resolves to a object.    The warnings array will contain additional info about invalid data.
+     * @returns {Promise&lt;Object>} - Promise resolves to a object.    The warnings array will contain additional info about invalid data.
      */
 
     update(user) {
@@ -110,7 +142,7 @@ class User extends Fortuna {
      *              }
      *              })
      *                .catch((ex) => console.log(ex));
-     * @returns {Promise<string>} - Promise resolves to a success message.
+     * @returns {Promise&lt;string>} - Promise resolves to a success message.
      */
 
     deactivate(externalId) {
@@ -124,4 +156,26 @@ class User extends Fortuna {
     }
 }
 
-module.exports = User;
+module.exports = User;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Ping.html">Ping</a></li></ul><h3>Classes</h3><ul><li><a href="Auth.html">Auth</a></li><li><a href="FortunaAPI.html">FortunaAPI</a></li><li><a href="Token.html">Token</a></li><li><a href="User.html">User</a></li><li><a href="Users.html">Users</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Feb 11 2018 17:17:24 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
