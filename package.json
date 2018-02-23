@@ -1,7 +1,7 @@
 {
   "name": "fortunasdk",
-  "version": "0.0.1",
-  "description": "SDK for interacting with the Fortuna API",
+  "version": "1.0.0",
+  "description": "SDK for interacting with the Knowledge Anywhere LMS REST API",
   "main": "index.js",
   "scripts": {
     "test": "mocha spec/fortuna-api.spec.js --timeout 5000",
@@ -9,7 +9,7 @@
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha spec/fortuna-api.spec.js",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "docjs": "documentation build index.js -f html -o docs --config documentation.yml",
-    "docjs2": "documentation build index.js -f html -o docs",
+    "docjs2": "documentation build index.js -f html -o docs -t node_modules/ka-doc-alt",
     "docjs-json": "documentation build index.js -f json -o docsjson"
   },
   "repository": {
@@ -27,7 +27,7 @@
     "anywhere"
   ],
   "author": "Taylor Ackley",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/KnowledgeAnywhere/FortunaSDK/issues"
   },
@@ -43,7 +43,8 @@
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
-    "jsdoc": "^3.5.5",
+    "ka-doc": "taylorackley/documentation-theme-default#master",
+    "ka-doc-alt": "documentationjs/documentation-theme-serif#master",
     "mocha": "^4.1.0",
     "mocha-lcov-reporter": "^1.3.0",
     "node-localstorage": "^1.3.0"

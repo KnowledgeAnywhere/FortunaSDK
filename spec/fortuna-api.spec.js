@@ -40,7 +40,7 @@ describe('fortuna', function () {
 
     describe('fortuna.auth', function () {
         it('should be defined and an object', function () {
-            expect(fortuna.auth).to.be.an('function')
+            expect(fortuna.auth).to.be.an('object');
         })
         describe('fortuna.auth.getSingleUseToken()', function (done) {
             it('should return a string containing Bearer', function () {
@@ -82,9 +82,9 @@ describe('fortuna', function () {
 
     }); // fortuna.auth
 
-    describe('fortuna.$', function () {
-        it('fortuna.$.get should get data', function (done) {
-            fortuna.$.get('ping')
+    describe('fortuna.api', function () {
+        it('fortuna.api.get should get data', function (done) {
+            fortuna.api.get('ping')
                 .then(function (res) {
                     res.should.equal('Service Running');
                 })
@@ -92,11 +92,11 @@ describe('fortuna', function () {
                     console.log(ex);
                 }).finally(done);
         });
-    }); // fortuna.$
+    }); // fortuna.api
 
     describe('fortuna.ping', function () {
         it('should be defined and an object', function () {
-            expect(fortuna.ping).to.be.an('function');
+            expect(fortuna.ping).to.be.an('object');
         });
 
         describe('fortuna.ping.checkHealth()', function () {
