@@ -4,6 +4,7 @@
 
 const User = require('./lib/models/user.model');
 const Token = require('./lib/models/token.model');
+const CustomField = require('./lib/models/custom-field.model');
 
 // Modules
 
@@ -27,3 +28,4 @@ module.exports = Fortuna;
 
 module.exports.user = User;
 module.exports.token = Token;
+module.exports.customField = CustomField;
