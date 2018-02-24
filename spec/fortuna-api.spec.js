@@ -11,8 +11,45 @@ const env = process.env;
 const LocalStorage = require('node-localstorage').LocalStorage;
 const ls = new LocalStorage('./.data');
 
+var usersProto = {
+    "firstName": "Piper",
+    "lastName": "userX45",
+    "email": "a11da@knowledgeanywhere.com",
+    "externalId": "d2dddasdesa9807f90f234",
+    "password": "F0rtun@#",
+    "active": true,
+    "sendinitialemail": true,
+    "forcepasswordchange": true,
+    "locale": "en-us",
+    "registrationCode": "regcodeone",
+    "businessName": "Knowledge Anywhere",
+    "phone": "800-850-2025",
+    "address1": "3015 112th Ave NE",
+    "address2": "Suite 210",
+    "city": "Bellevue",
+    "state": "WA",
+    "postalCode": 98004,
+    "country": "xx",
+    "customFields": [{
+        "name": "679",
+        "value": "wings"
+    }]
+};
+
+// lib
+
+// Helpers
+
 const Environment = require('../lib/helpers/environment.helper');
+
+// Models
+
 const Auth = require('../lib/modules/auth.module');
+const Token = require('../lib/models/token.model');
+const User = require('../lib/models/user.model');
+const CustomField = require('../lib/models/custom-field.model');
+
+// Namespace
 const fortuna = require('../index.js');
 
 describe('env vars', function () {
@@ -40,10 +77,10 @@ describe('fortuna', function () {
 
     describe('fortuna.auth', function () {
         it('should be defined and an object', function () {
-            expect(fortuna.auth).to.be.an('function')
+            expect(fortuna.auth).to.be.an('object');
         })
-        describe('fortuna.auth.getSingleUseToken()', function (done) {
-            it('should return a string containing Bearer', function () {
+        describe('fortuna.auth.getSingleUseToken()', function () {
+            it('should return a string containing Bearer', function (done) {
                 fortuna.auth.getSingleUseToken()
                     .then(function (res) {
                         res.should.contain('Bearer');
@@ -58,7 +95,6 @@ describe('fortuna', function () {
         describe('fortuna.auth.token()', function () {
             var token;
             it('should return a token object', function (done) {
-
                 fortuna.auth.token()
                     .then(function (res) {
                         token = res;
@@ -73,46 +109,82 @@ describe('fortuna', function () {
                 fortuna.auth.token()
                     .then(function (res) {
                         res.accessToken.should.equal(token.accessToken);
-
-                    }).catch(ex => {
-                        console.log(ex);
                     }).finally(done);
             });
         });
+    });
 
-    }); // fortuna.auth
+}); // fortuna.auth
 
-    describe('fortuna.$', function () {
-        it('fortuna.$.get should get data', function (done) {
-            fortuna.$.get('ping')
+describe('fortuna.api', function () {
+    it('fortuna.api.get should get data', function (done) {
+        fortuna.api.get('ping')
+            .then(function (res) {
+                res.should.equal('Service Running');
+            }).finally(done);
+    });
+}); // fortuna.api
+
+describe('fortuna.ping', function () {
+    it('should be defined and an object', function () {
+        expect(fortuna.ping).to.be.an('object');
+    });
+
+    describe('fortuna.ping.checkHealth()', function () {
+        it('should return a message', function (done) {
+            fortuna.ping.checkHealth()
                 .then(function (res) {
                     res.should.equal('Service Running');
                 })
-                .catch(ex => {
-                    console.log(ex);
-                }).finally(done);
-        });
-    }); // fortuna.$
+                .catch(function (ex) {}).finally(done);
 
-    describe('fortuna.ping', function () {
-        it('should be defined and an object', function () {
-            expect(fortuna.ping).to.be.an('function');
-        });
-
-        describe('fortuna.ping.checkHealth()', function () {
-            it('should return a message', function (done) {
-                fortuna.ping.checkHealth()
-                    .then(function (res) {
-                        res.should.equal('Service Running');
-                        done();
-                    })
-                    .catch(function (ex) {
-                        assert.fail();
-                        done();
-                    });
-
-            });
         });
     }); // fortuna.ping
+});
+
+describe('fortuna.users', function () {
+    it('should be defined and an object', function () {
+        expect(fortuna.users).to.be.an('object');
+    });
+
+    describe('fortuna.user.find()', function () {
+        it('should return users', function (done) {
+            fortuna.users.find()
+                .then(function (res) {
+                    console.log(res);
+                    res.should.be.an('array');
+                })
+                .catch(function (ex) {}).finally(done);
+
+        });
+    }); // fortuna.users
 
 }); // fortuna
+
+// Models
+
+console.log(typeof (User));
+
+describe('User', function () {
+    it('should be defined and an object', function () {
+        expect(User).to.be.an('function');
+    });
+}); // User
+
+describe('Token', function () {
+    it('should be defined and an object', function () {
+        expect(Token).to.be.an('function');
+    });
+}); // Token
+
+
+describe('CustomField', function () {
+    it('should be defined and an instance of CustomField', function () {
+        let cfd = new CustomField({
+            name: "Custom Field One",
+            value: "Manager"
+        });
+        console.log(cfd.name);
+        expect(cfd).to.be.an.instanceOf(CustomField);
+    });
+}); //CustomField
