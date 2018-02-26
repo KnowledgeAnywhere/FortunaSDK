@@ -13,7 +13,7 @@
     <div class='flex'>
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
-          <h3 class='mb0 no-anchor'>fortunasdk</h3>
+          <h3 class='mb0 no-anchor'>fortunasdk beta</h3>
           <div class='mb1'><code>1.0.0</code></div>
           <input
             placeholder='Filter'
@@ -1605,7 +1605,7 @@ Subsequent calls will check the freshness of the token and create a new one if n
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>user</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>&#x3C;<a href="#user">User</a>>)</code>
-	    User object to update.  @see 
+	    User object to create.  @see 
 <a href="#user">User</a>
 
           </div>
@@ -1747,7 +1747,7 @@ fortuna.user.create(user)
   <p>deactivates a user.</p>
 
 
-  <div class='pre p1 fill-light mt0'>deactivate(externalId: any, user: strig): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
+  <div class='pre p1 fill-light mt0'>deactivate(externalId: any, user: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
   
   
 
@@ -1772,7 +1772,7 @@ fortuna.user.create(user)
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>user</span> <code class='quiet'>(strig)</code>
+            <span class='code bold'>user</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    externalId
 fortuna.user.deactivate(externalId)
 .then(res => {

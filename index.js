@@ -16,9 +16,9 @@ const Users = require('./lib/modules/users.module');
 const Fortuna = {};
 
 Fortuna.api = new FortunaAPI();
-Fortuna.ping = Ping;
-Fortuna.auth = Auth;
-Fortuna.users = Users;
+Fortuna.ping = new Ping();
+Fortuna.auth = new Auth();
+Fortuna.users = new Users();
 
 // expose Fortuna
 
