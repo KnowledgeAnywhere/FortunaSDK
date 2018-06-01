@@ -34,6 +34,7 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "dotenv": "^4.0.0",
+    "faker": "^4.1.0",
     "moment": "^2.20.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
@@ -57,6 +58,6 @@
     "prettier": "1.11.1"
   },
   "optionalDependencies": {
-        "ka-doc": "https://github.com/TaylorAckley/documentation-theme.git#master"
+    "ka-doc": "https://github.com/TaylorAckley/documentation-theme.git#master"
   }
 }

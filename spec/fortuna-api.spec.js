@@ -136,6 +136,7 @@ describe('fortuna.users', function () {
                 .then(function (res) {
                     console.log(res);
                     res.should.be.an('array');
+                    res[0].externalId.should.be.an('string');
                     comparitor = res[0];
                 })
                 .catch(function (ex) {}).finally(done);
@@ -149,7 +150,7 @@ describe('fortuna.users', function () {
             fortuna.users.findById(comparitor.externalId)
                 .then(function (res) {
                     console.log(res);
-                    res.should.be.defined;
+                    res.externalId.should.be.defined;
                 })
                 .catch(function (ex) { }).finally(done);
         });
@@ -160,10 +161,12 @@ describe('fortuna.users', function () {
 
     describe('fortuna.user.create()', function () {
         it('should return a single user', function (done) {
-            fortuna.users.create(comparitor.externalId)
+            const user = userProto;
+            user.externalId =
+            fortuna.users.create()
                 .then(function (res) {
                     console.log(res);
-                    res.should.be.defined;
+                    res.message.should.equal('USER_PROVISION_SUCCESS');
                 })
                 .catch(function (ex) { }).finally(done);
         });
