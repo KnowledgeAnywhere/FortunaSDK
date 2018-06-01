@@ -142,7 +142,7 @@ describe('fortuna.users', function () {
 
         }); // Users.find
 
-    //Users.find
+    //Users.findById
 
     describe('fortuna.user.findById()', function () {
         it('should return a single user', function (done) {
@@ -154,7 +154,21 @@ describe('fortuna.users', function () {
                 .catch(function (ex) { }).finally(done);
         });
 
-        }); // Users.find
+        }); // Users.findById
+
+            //Users.create
+
+    describe('fortuna.user.create()', function () {
+        it('should return a single user', function (done) {
+            fortuna.users.create(comparitor.externalId)
+                .then(function (res) {
+                    console.log(res);
+                    res.should.be.defined;
+                })
+                .catch(function (ex) { }).finally(done);
+        });
+
+        }); // Users.create
 
 
     }); // fortuna.users

@@ -8,14 +8,23 @@
     "manual": "node spec/manual-tests.js",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha spec/fortuna-api.spec.js",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "docjs": "documentation build index.js -f html -o docs --config documentation.yml --theme ka-doc",
+    "docjs": "node_modules/.bin/documentation build index.js -f html -o docs --config documentation.yml --theme ka-doc",
     "docjs-json": "documentation build index.js -f json -o docsjson"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KnowledgeAnywhere/FortunaSDK.git"
   },
-  "keywords": ["LMS", "elearning", "SDK", "fortuna", "api", "ka", "knowledge", "anywhere"],
+  "keywords": [
+    "LMS",
+    "elearning",
+    "SDK",
+    "fortuna",
+    "api",
+    "ka",
+    "knowledge",
+    "anywhere"
+  ],
   "author": "Taylor Ackley",
   "license": "Apache-2.0",
   "bugs": {
@@ -27,7 +36,8 @@
     "dotenv": "^4.0.0",
     "moment": "^2.20.1",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -44,7 +54,9 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-standard": "^3.1.0",
-    "prettier": "1.11.1",
-    "ka-doc": "https://github.com/TaylorAckley/documentation-theme.git#master"
+    "prettier": "1.11.1"
+  },
+  "optionalDependencies": {
+        "ka-doc": "https://github.com/TaylorAckley/documentation-theme.git#master"
   }
 }
