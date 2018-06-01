@@ -306,7 +306,7 @@ In the specs folder, modify the file <code>manual-tests.js</code> to run through
   </div>
   
 
-  <p>Class representing a User</p>
+  <p>Most fields are optional.   Only required fields are externalId, email, lastName, FirstName.</p>
 
 
   <div class='pre p1 fill-light mt0'>User</div>
@@ -333,103 +333,143 @@ In the specs folder, modify the file <code>manual-tests.js</code> to run through
       
         <div class='space-bottom0'>
           <span class='code bold'>externalId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The unique identifier from the system calling the API for this user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>email</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The email for the user.
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>lastName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The last name for the user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>firstName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The first name for the user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>password</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          : Plain text password (optional). There is a minimum length requirement of 6 characters.
+
           
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>ssoId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          : Unique identifier utilized by the Single Sign-on system integrated with the LMS used to uniquely identify this user for sign-on.  If Provisioning and SSO are handled by the same system this could be the same data passed for externalId.
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>active</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+          : Make user active/inactive in the LMS
+
           
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>siteName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          : The name of the microsite.
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>sendInitialEmail</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
-          
+          : Send the user an email with a link to the LMS. Defaults to false
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>forcePasswordChange</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
-          
+          : Make the user change thier passowrd on next login. Defaults to false
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>locale</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The 4 letter language code. If the code is not active in the LMS the user will be defaulted to the default LMS value. In most cases this is EN-US.    Defaults to EN-US.   If a invalid locale is passed in, the operation will continue, but will return a warning.
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>registrationCode</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          : If your LMS uses registration codes for users to self register use this field to assign that code to the user. The value passed in must match a value in the LMS, if no match is found the request will result in a 400 bad request.
+
           
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>phoneNumber</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          : The phone number for this user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>businessName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The company name for this user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>address1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The street address, P.O. Box for this user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>address2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The apartment, suite, unit building, floor, etc for this user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>city</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The city for the user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>state</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The 2 or 3 letter state/province abbrevation for the user.
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>postalCode</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The zip or postal code for the user
+
           
         </div>
       
         <div class='space-bottom0'>
           <span class='code bold'>country</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-          
+          : The 2 or 3 letter ISO country code country for the user. See 
+<a href="https://www.iso.org/iso-3166-country-codes.html">https://www.iso.org/iso-3166-country-codes.html</a>
+ for the list of valid country codes.   Defaults to the country specified in your LMS configuration.   If a invalid country is specified, the operation will continue, but a warning will be thrown.
+
           
         </div>
       
@@ -1451,9 +1491,28 @@ Subsequent calls will check the freshness of the token and create a new one if n
         </div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>externalIds</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code>
+          <span class='code bold'>externalds</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code>
           :   Filters users by their 
 <code>externalId</code>
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>ssoIds</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code>
+          :   Filters users by their 
+<code>ssoId</code>
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>emails</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>>)</code>
+          :   Comma separated list of emails to return. Commas must be escaped for HTML. Each item will be executed as a fuzzy search, not an exact match. This means searching for 
+<code>@knowledgeanywhere.com</code>
+ will return any users with 
+<code>@knowledgeanywhere.com</code>
+ in their email.
 
           
         </div>
@@ -1605,7 +1664,7 @@ Subsequent calls will check the freshness of the token and create a new one if n
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>user</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>&#x3C;<a href="#user">User</a>>)</code>
-	    User object to update.  @see 
+	    User object to create.  @see 
 <a href="#user">User</a>
 
           </div>
@@ -1747,7 +1806,7 @@ fortuna.user.create(user)
   <p>deactivates a user.</p>
 
 
-  <div class='pre p1 fill-light mt0'>deactivate(externalId: any, user: strig): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
+  <div class='pre p1 fill-light mt0'>deactivate(externalId: any, user: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
   
   
 
@@ -1772,7 +1831,7 @@ fortuna.user.create(user)
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>user</span> <code class='quiet'>(strig)</code>
+            <span class='code bold'>user</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    externalId
 fortuna.user.deactivate(externalId)
 .then(res => {
