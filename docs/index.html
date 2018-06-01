@@ -354,7 +354,7 @@ In the specs folder, modify the file <code>manual-tests.js</code> to run through
   </div>
   
 
-  <p>Model Representing a User</p>
+  <p>Most fields are optional.   Only required fields are externalId, email, lastName, FirstName.</p>
 
 
   <div class='pre p1 fill-light mt0'>User</div>
@@ -765,7 +765,15 @@ In the specs folder, modify the file <code>manual-tests.js</code> to run through
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>cfd</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+            <span class='code bold'>cfd</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>CustomFieldDefinition</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
 	    Object containing the Custom Field Definition
 
           </div>
@@ -1493,7 +1501,7 @@ Subsequent calls will check the freshness of the token and create a new one if n
 
   
 
-  <p>Search for users.   Returns 1000 users at a time.   Use the <code>offset</code> parameter to loop through the LMS's entire record set.</p>
+  <p>Search for users.   If you only want to return 1000 users at a time, use the offset parameter.   Otherwise all users will returned.</p>
 
 
   <div class='pre p1 fill-light mt0'>find(searchParams: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#user">User</a>>></div>
@@ -1513,7 +1521,8 @@ Subsequent calls will check the freshness of the token and create a new one if n
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>searchParams</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>searchParams</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
 	    Object containing search parameters.   See properties.
 
           </div>
@@ -1566,6 +1575,13 @@ Subsequent calls will check the freshness of the token and create a new one if n
  will return any users with 
 <code>@knowledgeanywhere.com</code>
  in their email.
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>includeInactive</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+          : When true, inactive users will be included in the results set.
 
           
         </div>

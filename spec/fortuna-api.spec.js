@@ -11,30 +11,7 @@ const env = process.env;
 const LocalStorage = require('node-localstorage').LocalStorage;
 const ls = new LocalStorage('./.data');
 
-var usersProto = {
-    "firstName": "Piper",
-    "lastName": "userX45",
-    "email": "a11da@knowledgeanywhere.com",
-    "externalId": "d2dddasdesa9807f90f234",
-    "password": "F0rtun@#",
-    "active": true,
-    "sendinitialemail": true,
-    "forcepasswordchange": true,
-    "locale": "en-us",
-    "registrationCode": "regcodeone",
-    "businessName": "Knowledge Anywhere",
-    "phone": "800-850-2025",
-    "address1": "3015 112th Ave NE",
-    "address2": "Suite 210",
-    "city": "Bellevue",
-    "state": "WA",
-    "postalCode": 98004,
-    "country": "xx",
-    "customFields": [{
-        "name": "679",
-        "value": "wings"
-    }]
-};
+
 
 // lib
 
@@ -54,9 +31,9 @@ const fortuna = require('../index.js');
 
 describe('env vars', function () {
     it(' should be defined and strings', function () {
-        env.FORTUNA_SECRET.should.be.a('string');
-        env.FORTUNA_AUDIENCE.should.be.a('string');
-        env.FORTUNA_API_URL.should.be.a('string');
+        env.LMS_SECRET.should.be.a('string');
+        env.LMS_AUDIENCE.should.be.a('string');
+        env.LMS_API_URL.should.be.a('string');
     });
 });
 
@@ -142,10 +119,16 @@ describe('fortuna.ping', function () {
     }); // fortuna.ping
 });
 
+const userProto = require('./user.proto');
+
 describe('fortuna.users', function () {
     it('should be defined and an object', function () {
         expect(fortuna.users).to.be.an('object');
     });
+
+    //Users.find
+
+    var comparitor;
 
     describe('fortuna.user.find()', function () {
         it('should return users', function (done) {
@@ -153,17 +136,33 @@ describe('fortuna.users', function () {
                 .then(function (res) {
                     console.log(res);
                     res.should.be.an('array');
+                    comparitor = res[0];
                 })
                 .catch(function (ex) {}).finally(done);
 
+        }); // Users.find
+
+    //Users.find
+
+    describe('fortuna.user.findById()', function () {
+        it('should return a single user', function (done) {
+            fortuna.users.findById(comparitor.externalId)
+                .then(function (res) {
+                    console.log(res);
+                    res.should.be.defined;
+                })
+                .catch(function (ex) { }).finally(done);
         });
+
+        }); // Users.find
+
+
     }); // fortuna.users
 
 }); // fortuna
 
 // Models
 
-console.log(typeof (User));
 
 describe('User', function () {
     it('should be defined and an object', function () {
