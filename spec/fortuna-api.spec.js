@@ -5,6 +5,7 @@ const assert = require('assert');
 const chai = require('chai'),
     expect = chai.expect,
     should = chai.should();
+const faker = require('faker');
 
 const env = process.env;
 
@@ -120,56 +121,102 @@ describe('fortuna.ping', function () {
 });
 
 const userProto = require('./user.proto');
+const _user = userProto;
+_user.externalId = faker.random.uuid();
+_user.email = faker.internet.exampleEmail();
+_user.sendinitialemail = false;
 
 describe('fortuna.users', function () {
     it('should be defined and an object', function () {
         expect(fortuna.users).to.be.an('object');
     });
 
+    describe('fortuna.user.create()', function () {
+        it('should create a user', function (done) {
+            fortuna.users.create(_user)
+                .then(function (res) {
+                    console.log(res);
+                    res.message.should.equal('USER_PROVISION_SUCCESS');
+                    //Users.findById
+
+                    describe('fortuna.user.findById()', function () {
+                        it('should return a single user', function (done) {
+                            fortuna.users.findById(_user.externalId)
+                                .then(function (res) {
+                                    res.externalId.should.be.defined;
+        //Users.findById
+
+        describe('fortuna.user.update', function () {
+            it('should update a single user', function (done) {
+                res.ssoId = faker.random.uuid();
+                fortuna.users.update(res)
+                    .then(function (_res) {
+                        _res.externalId.should.be.defined;
+                    })
+                    .catch(function (ex) {}).finally(done);
+            });
+
+    }); // Users.findById
+                                })
+                                .catch(function (ex) {}).finally(done);
+                        });
+
+                    }); // Users.findById
+                })
+                .catch(function (ex) {}).finally(done);
+        });
+
+    }); // Users.create
+
+
+
+
+    describe('fortuna.user.create()', function () {
+        it('should create a user', function (done) {
+            fortuna.users.create(_user)
+                .then(function (res) {
+                    console.log(res);
+                    res.message.should.equal('USER_PROVISION_SUCCESS');
+                })
+                .catch(function (ex) {}).finally(done);
+        });
+
+    }); // Users.create
+
     //Users.find
 
-    var comparitor;
 
     describe('fortuna.user.find()', function () {
         it('should return users', function (done) {
             fortuna.users.find()
                 .then(function (res) {
-                    console.log(res);
                     res.should.be.an('array');
                     res[0].externalId.should.be.an('string');
-                    comparitor = res[0];
                 })
                 .catch(function (ex) {}).finally(done);
 
         }); // Users.find
 
-    //Users.findById
 
-    describe('fortuna.user.findById()', function () {
-        it('should return a single user', function (done) {
-            fortuna.users.findById(comparitor.externalId)
-                .then(function (res) {
-                    console.log(res);
-                    res.externalId.should.be.defined;
-                })
-                .catch(function (ex) { }).finally(done);
-        });
 
-        }); // Users.findById
+        //Users.create
 
-            //Users.create
 
-    describe('fortuna.user.create()', function () {
-        it('should return a single user', function (done) {
-            const user = userProto;
-            user.externalId =
-            fortuna.users.create()
-                .then(function (res) {
-                    console.log(res);
-                    res.message.should.equal('USER_PROVISION_SUCCESS');
-                })
-                .catch(function (ex) { }).finally(done);
-        });
+
+
+        describe('fortuna.user.update()', function () {
+            it('should update a user', function (done) {
+                const user = userProto;
+                user.externalId = faker.random.uuid();
+                user.email = faker.internet.exampleEmail();
+                user.sendinitialemail = false;
+                fortuna.users.create(user)
+                    .then(function (res) {
+                        console.log(res);
+                        res.message.should.equal('USER_PROVISION_SUCCESS');
+                    })
+                    .catch(function (ex) {}).finally(done);
+            });
 
         }); // Users.create
 
