@@ -8,7 +8,7 @@
     "manual": "node spec/manual-tests.js",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha spec/fortuna-api.spec.js",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "docjs": "node_modules/.bin/documentation build index.js -f html -o docs --config documentation.yml --theme node_modules/ka-doc-alt",
+    "docjs": "node_modules/.bin/documentation build index.js -f html -o docs --config documentation.yml --theme node_modules/ka-doc",
     "docjs-json": "documentation build index.js -f json -o docsjson"
   },
   "repository": {
@@ -45,7 +45,6 @@
     "istanbul": "^0.4.5",
     "jsdoc": "^3.5.5",
     "ka-doc": "taylorackley/documentation-theme-default#master",
-    "ka-doc-alt": "documentationjs/documentation-theme-serif#master",
     "mocha": "^4.1.0",
     "mocha-lcov-reporter": "^1.3.0",
     "node-localstorage": "^1.3.0"
