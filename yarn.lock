@@ -2748,6 +2748,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+ka-doc-alt-alt@documentationjs/documentation-theme-light#master:
+  version "1.0.0-alpha"
+  resolved "https://codeload.github.com/documentationjs/documentation-theme-light/tar.gz/f499b9179bf5a1464cb7ddcbdd3c783b02f6672c"
+
 ka-doc-alt@documentationjs/documentation-theme-serif#master:
   version "1.0.0-alpha"
   resolved "https://codeload.github.com/documentationjs/documentation-theme-serif/tar.gz/9468187b8f08261650e2952a6abebda5d77823a2"

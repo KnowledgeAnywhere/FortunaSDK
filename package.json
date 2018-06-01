@@ -15,16 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/KnowledgeAnywhere/FortunaSDK.git"
   },
-  "keywords": [
-    "LMS",
-    "elearning",
-    "SDK",
-    "fortuna",
-    "api",
-    "ka",
-    "knowledge",
-    "anywhere"
-  ],
+  "keywords": ["LMS", "elearning", "SDK", "fortuna", "api", "ka", "knowledge", "anywhere"],
   "author": "Taylor Ackley",
   "license": "Apache-2.0",
   "bugs": {
@@ -43,10 +34,18 @@
     "coveralls": "^3.0.0",
     "documentation": "^5.4.0",
     "istanbul": "^0.4.5",
-    "jsdoc": "^3.5.5",
     "ka-doc": "taylorackley/documentation-theme-default#master",
     "mocha": "^4.1.0",
     "mocha-lcov-reporter": "^1.3.0",
-    "node-localstorage": "^1.3.0"
+    "node-localstorage": "^1.3.0",
+    "eslint": "4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-standard": "^3.1.0",
+    "prettier": "1.11.1",
+    "ka-docs-alt": "TaylorAckley/documentation-theme"
   }
 }
