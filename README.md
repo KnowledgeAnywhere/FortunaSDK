@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK.svg?branch=master)](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK) [![Coverage Status](https://coveralls.io/repos/github/KnowledgeAnywhere/FortunaSDK/badge.svg)](https://coveralls.io/github/KnowledgeAnywhere/FortunaSDK)
 
-SDK for Interacting with the Fortuna LMS API.   *This SDK is still in development and not ready for general use.*
+SDK for Interacting with the Fortuna LMS API. _This SDK is still in development and not ready for general use._
 
 contact support@knowledgeanywhere.com if you would like more information.
 
@@ -10,32 +10,33 @@ contact support@knowledgeanywhere.com if you would like more information.
 
 ## Installation and Getting Started
 
-- You will need Audience and Secret keys for authorization.   These can be obtained by going to into the admin panel for your LMS and navigating to Site > External API keys.
-- run the cmd `npm i fortunasdk --save` to get the package.
-- The SDK expects the constants `FORTUNA_AUDIENCE`, `FORTUNA_SECRET` & `FORTUNA_API_URL` to be present as process variables.   The easiest way to accomplish this is to use an .env file that is loaded via [Foreman](https://www.npmjs.com/package/foreman) or [dotenv](https://www.npmjs.com/package/dotenv).
+* You will need Audience and Secret keys for authorization. These can be obtained by going to into the admin panel for your LMS and navigating to Site > External API keys.
+* run the cmd `npm i fortunasdk --save` to get the package.
+* The SDK expects the constants `LMS_AUDIENCE`, `LMS_SECRET` & `LMS_API_URL` to be present as process variables. The easiest way to accomplish this is to use an .env file that is loaded via [Foreman](https://www.npmjs.com/package/foreman) or [dotenv](https://www.npmjs.com/package/dotenv).
 
 ## Usage
 
-- Placeholder usage.
+* Refer to [Documentation](https://knowledgeanywhere.github.io/FortunaSDK/) to see available method calls.
+* All methods. return a promise and are async/await friendly.
 
 ## Issues
 
-- Bugs related to the SDK should be filed under this Github Repository.  Be sure to include your Node version and any relevant error information.
-- Issues with the Fortuna API itself should be emailed to support@knowledgeanywhere.com
+* Bugs related to the SDK should be filed under this Github Repository. Be sure to include your Node version and any relevant error information.
+* Issues with the Fortuna API itself should be emailed to support@knowledgeanywhere.com
 
 ## Contributing
 
-- Clone repo onto your machine
-- Create a .env file with `FORTUNA_AUDIENCE`, `FORTUNA_SECRET` keys.   Fill in `FORTUNA_AUDIENCE` and `FORTUNA_SECRET` from the values that are attained in the Fortuna admin.  Set environment to `stage`.
-- Run `npm install`
-- To run tests run `npm tests`
+* Clone repo onto your machine
+* Create a .env file with `LMS_AUDIENCE`, `LMS_SECRET` keys. Fill in `LMS0_AUDIENCE` and `LMS_SECRET` from the values that are attained in the admin section of your LMS under the Site Menu. Set environment to `stage`.
+* Run `npm install`
+* To run tests run `npm tests`
 
 To update documentation, run `npm run-script generate-docs`
 
 ### Debugging in VS Code
 
 The recommended editor for working on the FortunaSDK is Visual Studio code, which is has a debug configuration already setup.
-In the specs folder, modify the file `manual-tests.js` to run through the code you desire to debug.  When you're ready, select the "debug" icon in the pane and click "launch program" and it will hit any breakpoints you set.
+In the specs folder, modify the file `manual-tests.js` to run through the code you desire to debug. When you're ready, select the "debug" icon in the pane and click "launch program" and it will hit any breakpoints you set.
 
 See also: [Visual Studio Code - Debugger Documentation](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)
 
