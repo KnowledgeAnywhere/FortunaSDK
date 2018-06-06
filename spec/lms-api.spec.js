@@ -31,7 +31,6 @@ describe('env vars', function() {
   it(' should be defined and strings', function() {
     env.LMS_SECRET.should.be.a('string');
     env.LMS_AUDIENCE.should.be.a('string');
-    env.LMS_API_URL.should.be.a('string');
   });
 });
 
@@ -141,26 +140,17 @@ describe('lms.users', function() {
       lms.users
         .create(_user)
         .then(function(res) {
-          console.log(res);
           res.message.should.equal('USER_PROVISION_SUCCESS');
         })
-        .catch(function(ex) {});
+        .catch(function(ex) {})
+        .finally(done);
     });
   }); // Users.create
 
   describe('lms.user.findById()', function() {
-    let ___user;
-    before(function() {
-      lms.users
-        .find()
-        .then(function(res) {
-          ___user = res[0];
-        })
-        .catch(function(ex) {});
-    });
     it('should return a single user', function(done) {
       lms.users
-        .findById(___user.externalId)
+        .findById('fxcadgddgaa657dsda55fdgdfg')
         .then(function(res) {
           res.externalId.should.be.defined;
         })
@@ -170,21 +160,14 @@ describe('lms.users', function() {
   }); // Users.findById
 
   describe('lms.user.update', function() {
-    let ___user;
-    before(function() {
-      lms.users
-        .find()
-        .then(function(res) {
-          ___user = res[0];
-          ___user.ssoId = faker.random.uuid();
-        })
-        .catch(function(ex) {});
-    });
+    let ___user = {};
+    ___user.externalId = 'fxcadgddgaa657dsda55fdgdfg';
+    ___user.ssoId = faker.random.uuid();
     it('should update a single user', function(done) {
       lms.users
         .update(___user)
         .then(function(_res) {
-          _res.externalId.should.be.defined;
+          _res.should.be.defined;
         })
         .catch(function(ex) {})
         .finally(done);

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK.svg?branch=master)](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK) [![Coverage Status](https://coveralls.io/repos/github/KnowledgeAnywhere/FortunaSDK/badge.svg)](https://coveralls.io/github/KnowledgeAnywhere/FortunaSDK)
 
-SDK for Interacting with the Knowledge Anywhere LMS API. _This SDK is still in development and not ready for general use._
+SDK for Interacting with the Knowledge Anywhere LMS API.
 
 contact support@knowledgeanywhere.com if you would like more information.
 
@@ -27,7 +27,7 @@ contact support@knowledgeanywhere.com if you would like more information.
 ## Contributing
 
 * Clone repo onto your machine
-* Create a .env file with `LMS_AUDIENCE`, `LMS_SECRET` keys. Fill in `LMS0_AUDIENCE` and `LMS_SECRET` from the values that are attained in the admin section of your LMS under the Site Menu. Set environment to `stage`.
+* Create a .env file with `LMS_AUDIENCE`, `LMS_SECRET` keys. Fill in `LMS_AUDIENCE` and `LMS_SECRET` from the values that are attained in the admin section of your LMS under the Site Menu. Set environment to `stage`.
 * Run `npm install`
 * To run tests run `npm tests`
 
