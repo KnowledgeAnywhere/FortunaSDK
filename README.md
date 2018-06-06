@@ -12,7 +12,7 @@ contact support@knowledgeanywhere.com if you would like more information.
 
 * You will need Audience and Secret keys for authorization. These can be obtained by going to into the admin panel for your LMS and navigating to Site > External API keys.
 * run the cmd `npm i knowledgeanywhere --save` to get the package.
-* The SDK expects the constants `LMS_AUDIENCE`, `LMS_SECRET` & `LMS_API_URL` to be present as process variables. The easiest way to accomplish this is to use an .env file that is loaded via [Foreman](https://www.npmjs.com/package/foreman) or [dotenv](https://www.npmjs.com/package/dotenv).
+* The SDK expects the constants `LMS_AUDIENCE`, `LMS_SECRET` to be present as process variables. The easiest way to accomplish this is to use an .env file that is loaded via [Foreman](https://www.npmjs.com/package/foreman) or [dotenv](https://www.npmjs.com/package/dotenv).   If you are directed to use a different API url, use the `LMS_API_URL` environment variable.
 
 ## Usage
 
@@ -22,7 +22,7 @@ contact support@knowledgeanywhere.com if you would like more information.
 ## Issues
 
 * Bugs related to the SDK should be filed under this Github Repository. Be sure to include your Node version and any relevant error information.
-* Issues with the Fortuna API itself should be emailed to support@knowledgeanywhere.com
+* Issues with the LMS API itself should be emailed to support@knowledgeanywhere.com
 
 ## Contributing
 
@@ -35,7 +35,7 @@ To update documentation, run `npm run-script generate-docs`
 
 ### Debugging in VS Code
 
-The recommended editor for working on the FortunaSDK is Visual Studio code, which is has a debug configuration already setup.
+The recommended editor for working on the SDK is Visual Studio code, which is has a debug configuration already setup.
 In the specs folder, modify the file `manual-tests.js` to run through the code you desire to debug. When you're ready, select the "debug" icon in the pane and click "launch program" and it will hit any breakpoints you set.
 
 See also: [Visual Studio Code - Debugger Documentation](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)
