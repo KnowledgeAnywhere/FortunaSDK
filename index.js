@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Models
 
@@ -8,21 +8,21 @@ const CustomField = require('./lib/models/custom-field.model');
 
 // Modules
 
-const FortunaAPI = require('./lib/modules/fortuna-api.module.js');
+const LMSAPI = require('./lib/modules/lms-api.module.js');
 const Ping = require('./lib/modules/ping.module');
 const Auth = require('./lib/modules/auth.module');
 const Users = require('./lib/modules/users.module');
 
-const Fortuna = {};
+const LMS = {};
 
-Fortuna.api = new FortunaAPI();
-Fortuna.ping = new Ping();
-Fortuna.auth = new Auth();
-Fortuna.users = new Users();
+LMS.api = new LMSAPI();
+LMS.ping = new Ping();
+LMS.auth = new Auth();
+LMS.users = new Users();
 
-// expose Fortuna
+// expose LMS
 
-module.exports = Fortuna;
+module.exports = LMS;
 
 // expose models
 

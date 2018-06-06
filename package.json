@@ -1,30 +1,22 @@
 {
-  "name": "fortunasdk",
+  "name": "knowledgeanywhere",
   "version": "1.0.0",
   "description": "SDK for interacting with the Knowledge Anywhere LMS REST API",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec/fortuna-api.spec.js --timeout 5000",
+    "test": "mocha spec/lms-api.spec.js --timeout 5000",
     "manual": "node spec/manual-tests.js",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha spec/fortuna-api.spec.js",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha spec/lms-api.spec.js",
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "docjs": "node_modules/.bin/documentation build index.js -f html -o docs --config documentation.yml --theme ka-doc",
+    "docjs":
+      "node_modules/.bin/documentation build index.js -f html -o docs --config documentation.yml --theme ka-doc",
     "docjs-json": "documentation build index.js -f json -o docsjson"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KnowledgeAnywhere/FortunaSDK.git"
   },
-  "keywords": [
-    "LMS",
-    "elearning",
-    "SDK",
-    "fortuna",
-    "api",
-    "ka",
-    "knowledge",
-    "anywhere"
-  ],
+  "keywords": ["LMS", "elearning", "SDK", "fortuna", "api", "ka", "knowledge", "anywhere"],
   "author": "Taylor Ackley",
   "license": "Apache-2.0",
   "bugs": {

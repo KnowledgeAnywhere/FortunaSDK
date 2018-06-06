@@ -1,8 +1,8 @@
-# Fortuna LMS API SDK
+# Knowledge Anywhere LMS API SDK
 
 [![Build Status](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK.svg?branch=master)](https://travis-ci.org/KnowledgeAnywhere/FortunaSDK) [![Coverage Status](https://coveralls.io/repos/github/KnowledgeAnywhere/FortunaSDK/badge.svg)](https://coveralls.io/github/KnowledgeAnywhere/FortunaSDK)
 
-SDK for Interacting with the Fortuna LMS API. _This SDK is still in development and not ready for general use._
+SDK for Interacting with the Knowledge Anywhere LMS API. _This SDK is still in development and not ready for general use._
 
 contact support@knowledgeanywhere.com if you would like more information.
 
@@ -11,7 +11,7 @@ contact support@knowledgeanywhere.com if you would like more information.
 ## Installation and Getting Started
 
 * You will need Audience and Secret keys for authorization. These can be obtained by going to into the admin panel for your LMS and navigating to Site > External API keys.
-* run the cmd `npm i fortunasdk --save` to get the package.
+* run the cmd `npm i knowledgeanywhere --save` to get the package.
 * The SDK expects the constants `LMS_AUDIENCE`, `LMS_SECRET` & `LMS_API_URL` to be present as process variables. The easiest way to accomplish this is to use an .env file that is loaded via [Foreman](https://www.npmjs.com/package/foreman) or [dotenv](https://www.npmjs.com/package/dotenv).
 
 ## Usage

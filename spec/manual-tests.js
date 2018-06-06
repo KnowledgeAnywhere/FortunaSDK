@@ -1,8 +1,10 @@
-"use strict";
+'use strict';
 
-const fortuna = require('../index');
+const lms = require('../index');
 const Environment = require('../lib/helpers/environment.helper');
 
-fortuna.users.find().then(users => {
-    console.log(users);
+console.log(Environment.get);
+
+lms.users.find().then(users => {
+  console.log(users);
 });
